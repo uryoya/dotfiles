@@ -12,6 +12,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
 
@@ -35,6 +36,12 @@ colorscheme molokai
 let g:molokai_origianl=1
 set background=dark
 highlight Normal ctermbg=none
+
+" lightline settings
+set laststatus=2
+let g:lightline = {
+    \'colorscheme':'wombat'
+    \}
 
 set guifont="Ubuntu Mono"
 set shiftwidth=4
