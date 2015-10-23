@@ -2,10 +2,10 @@ filetype off
 filetype plugin indent off
 
 if has('vim_starting')
-    set runtimepath+=/home/uryoya/dotfiles/.vim/bundle/neobundle.vim/
+    set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#begin(expand('/home/uryoya/dotfiles/.vim/bundle/'))
+call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
