@@ -13,6 +13,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
 
@@ -43,7 +44,7 @@ let g:lightline = {
     \'colorscheme':'wombat'
     \}
 
-set guifont="Ubuntu Mono"
+set guifont="Ubuntu Mono derivative Powerline Regular"
 set shiftwidth=4
 set softtabstop=4
 set expandtab
