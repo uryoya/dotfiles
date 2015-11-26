@@ -40,11 +40,15 @@ let g:molokai_origianl=1
 set background=dark
 highlight Normal ctermbg=none
 
+"--------------------------------------------------
+" プラグインの設定
+"--------------------------------------------------
 " lightline settings
 set laststatus=2
 let g:lightline = {
     \'colorscheme':'wombat'
     \}
+" end
 
 " neocomplete.vim と jedi.vimの連携
 autocmd FileType python setlocal omnifunc=jedi#completions
@@ -54,12 +58,15 @@ let g:jedi#auto_vim_configuration = 0
 if !exists('g:neocomplete#force_omni_input_patterns')
             let g:neocomplete#force_omni_input_patterns = {}
 endif
+" end
 
+" nerdtree settigs
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" end
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 let g:neocomplete#enable_at_startup = 1
 
 " その他
-set guifont="Ubuntu Mono derivative Powerline Regular"
 set shiftwidth=4
 set softtabstop=4
 set expandtab
