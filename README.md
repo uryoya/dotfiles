@@ -1,7 +1,8 @@
 # DotFiles
 ## Usage
-    $ sh dotfiles/dotfilesLink.sh
-    $ mkdir .vim/colors
-    $ cp dotfiles/colors/molokai.vim .vim/colors/
+    $ cd dotfiles
+    $ dotfilesLink.sh
     $ git submodule init
     $ git submodule update
+    $ vim
+    : NeoBundleInstall
