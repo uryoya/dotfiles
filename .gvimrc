@@ -7,3 +7,4 @@
 "        \/                    \/            \/ 
 "--------------------------------------------------
 set guifont=ubuntu\ mono\ 11
+set guioptions-=T
