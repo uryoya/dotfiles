@@ -16,6 +16,9 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 call neobundle#end()
 
@@ -65,6 +68,10 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 " end
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 let g:neocomplete#enable_at_startup = 1
+
+" markdown settings
+au BufRead,BufNewFile *.md set filetype=markdown
+" end
 
 " その他
 set shiftwidth=4
