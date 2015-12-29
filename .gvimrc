@@ -7,4 +7,10 @@
 "        \/                    \/            \/ 
 "--------------------------------------------------
 set guifont=ubuntu\ mono\ 11
+" ツールバー非表示
 set guioptions-=T
+" スクロールバー非表示
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
