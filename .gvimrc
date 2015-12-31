@@ -6,6 +6,7 @@
 " \______  /  \___/   |__|__|_|  /__|    \___  /
 "        \/                    \/            \/ 
 "--------------------------------------------------
+" フォント設定
 set guifont=ubuntu\ mono\ 11
 " ツールバー非表示
 set guioptions-=T
@@ -14,3 +15,5 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
+" タブページのラベルを常に表示
+set showtabline=2
