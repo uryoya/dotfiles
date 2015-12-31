@@ -31,8 +31,12 @@ set ignorecase " 大文字小文字を無視
 set smartcase " 検索に大文字を入れた場合大文字小文字を区別
 " 自動インデント
 set autoindent
-
+" スペルチェック
+set spell
+set spelllang=en,cjk " 有効：英語、無効：日本語
+" カーソルの位置表示
 set ruler
+" 行番号
 set number
 "set list
 set wildmenu
@@ -73,11 +77,15 @@ let g:neocomplete#enable_at_startup = 1
 au BufRead,BufNewFile *.md set filetype=markdown
 " end
 
-" その他
+" 自動インデント時の空白
 set shiftwidth=4
+" タブキーを押した時の空白
 set softtabstop=4
+" タブを半角スペースにする
 set expandtab
+" タブ文字を表示するときのサイズ
 set tabstop=4
+" 行との余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
 set smarttab
 " クリップボードの共有
 set clipboard=unnamed
