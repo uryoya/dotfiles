@@ -1,3 +1,12 @@
+"        _                    
+" _   __(_)___ ___  __________
+"| | / / / __ `__ \/ ___/ ___/
+"| |/ / / / / / / / /  / /__  
+"|___/_/_/ /_/ /_/_/   \___/  
+"                             
+
+" vi互換モードで動作させない
+set nocompatible
 filetype off
 filetype plugin indent off
 
@@ -22,6 +31,7 @@ NeoBundle 'tyru/open-browser.vim'
 
 call neobundle#end()
 
+" シンタックスハイライト
 syntax on
 " 画面のスクロール
 set nowrap
@@ -29,6 +39,7 @@ set nowrap
 set hlsearch " 検索結果ハイライト 
 set ignorecase " 大文字小文字を無視
 set smartcase " 検索に大文字を入れた場合大文字小文字を区別
+set nowrapscan " 最後の語句の次に最初の語句にループして検索しない
 " 自動インデント
 set autoindent
 " スペルチェック
@@ -38,6 +49,8 @@ set spelllang=en,cjk " 有効：英語、無効：日本語
 set ruler
 " 行番号
 set number
+" 入力中のコマンドを表示する
+set showcmd
 "set list
 set wildmenu
 " カラースキーマ設定
@@ -88,7 +101,7 @@ set tabstop=4
 " 行との余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
 set smarttab
 " クリップボードの共有
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
 
 "~~~~~~~~~~~~~~~~~~~~~
 " insert mode settings
