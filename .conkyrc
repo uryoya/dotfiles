@@ -1,6 +1,6 @@
 alignment top_right
 gap_x 0
-gap_y 100
+gap_y 35
 
 double_buffer yes
 background yes
@@ -52,3 +52,5 @@ CPU Usage: ${cpu cpu0}%
             ${cpugraph cpu0 -l}
 RAM Usage: $mem/$memmax
             $membar
+${execpi 60 python ~/Workspace/sample/scripts/gmail.py}
+${execpi 1 python ~/Workspace/sample/scripts/test.py}
