@@ -9,6 +9,7 @@
 " フォント設定
 set guifont=ubuntu\ mono\ 11
 set guifontwide=M+\ 2m\ 11
+set linespace=0
 " ツールバー非表示
 set guioptions-=T
 " スクロールバー非表示
