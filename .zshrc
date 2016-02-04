@@ -5,6 +5,7 @@
 # http://mollifier.mit-license.org/
 
 ########################################
+screenfetch
 # 環境変数
 export LANG=ja_JP.UTF-8
 
