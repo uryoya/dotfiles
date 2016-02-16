@@ -12,6 +12,8 @@ set guifontwide=Takaoゴシック\ 11
 set linespace=0
 " ツールバー非表示
 set guioptions-=T
+" メニューバー非表示
+set guioptions-=m
 " スクロールバー非表示
 set guioptions-=r
 set guioptions-=R
