@@ -59,6 +59,8 @@ colorscheme molokai
 let g:molokai_origianl=1
 set background=dark
 highlight Normal ctermbg=none
+" スワップファイル作成ディレクトリの指定
+set directory=~/.vim/tmp
 
 "--------------------------------------------------
 " プラグインの設定

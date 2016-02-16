@@ -8,7 +8,7 @@
 "--------------------------------------------------
 " フォント設定
 set guifont=ubuntu\ mono\ 11
-set guifontwide=Takaoゴシック\ 10
+set guifontwide=Takaoゴシック\ 11
 set linespace=0
 " ツールバー非表示
 set guioptions-=T
