@@ -63,6 +63,23 @@ highlight Normal ctermbg=none
 set directory=~/.vim/tmp
 " DropboxのToDoファイルを編集
 command! Todo edit ~/Dropbox/memo/todo.txt
+" helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/
+nnoremap <Space>t :<C-u>tab help<Space>
+nnoremap <Space>v :<C-u>vertical belowright help<Space>
+" MoveToNewTab
+nnoremap <silent> tm :<C-u>call <SID>MoveToNewTab()<CR>
+function! s:MoveToNewTab()
+    tab split
+    tabprevious
+
+    if winnr('$') > 1
+        close
+    elseif bufnr('$') > 1
+        buffer #
+    endif
+
+    tabnext
+endfunction
 
 "--------------------------------------------------
 " プラグインの設定
