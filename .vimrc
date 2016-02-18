@@ -61,6 +61,8 @@ set background=dark
 highlight Normal ctermbg=none
 " スワップファイル作成ディレクトリの指定
 set directory=~/.vim/tmp
+" DropboxのToDoファイルを編集
+command! Todo edit ~/Dropbox/memo/todo.txt
 
 "--------------------------------------------------
 " プラグインの設定
