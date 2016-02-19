@@ -53,6 +53,11 @@ set number
 set showcmd
 "set list
 set wildmenu
+" 補完メニューの高さ
+set pumheight=10
+" 括弧入力時に、対応する括弧に一瞬飛ぶ
+set showmatch
+set matchtime=1
 " カラースキーマ設定
 set t_Co=256
 colorscheme molokai
@@ -80,6 +85,25 @@ function! s:MoveToNewTab()
 
     tabnext
 endfunction
+" 誤操作したくないキーを無効化
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q <Nop>
+" ; : 入れ替え
+nnoremap ; :
+nnoremap : ;
+" esc バインド
+inoremap <silent> jj <Esc>
+" 行末までヤンク
+nnoremap Y y$
+" 数値の増減
+nnoremap + <C-a>
+nnoremap - <C-x>
+" 画面移動
+nnoremap <Left> <C-b>
+nnoremap <Right> <C-f>
+nnoremap <Up> <C-y>
+nnoremap <Down> <C-e>
 
 "--------------------------------------------------
 " プラグインの設定
@@ -102,7 +126,7 @@ endif
 " end
 
 " nerdtree settigs
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><Space>e :NERDTreeToggle<CR>
 " end
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 let g:neocomplete#enable_at_startup = 1
@@ -123,22 +147,5 @@ set tabstop=4
 set smarttab
 " クリップボードの共有
 set clipboard=unnamed,autoselect
-
-"~~~~~~~~~~~~~~~~~~~~~
-" insert mode settings
-"~~~~~~~~~~~~~~~~~~~~~
-" インサートモードの時にC-jでノーマルモードに戻る
-imap <C-j> <Esc>
-
-" [って打つと[]みたく入力されて、カッコの中に入る
-"imap [ []<left>
-"imap ( ()<left>
-"imap { {}<left>
-
-"~~~~~~~~~~~~~~~~~~~~~
-" normal mode settings
-"~~~~~~~~~~~~~~~~~~~~~
-" ２回Escを押したら検索のハイライトをやめる
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 filetype plugin indent on
