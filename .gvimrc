@@ -21,3 +21,6 @@ set guioptions-=l
 set guioptions-=L
 " タブページのラベルを常に表示
 set showtabline=2
+" 起動時のウィンドウサイズ
+set lines=40
+set columns=120
