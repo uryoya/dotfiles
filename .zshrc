@@ -8,6 +8,7 @@
 screenfetch
 # 環境変数
 export LANG=ja_JP.UTF-8
+export QT_IM_MODULE=fcitx
 
 # /usr/local/bin がない場合に追加
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
@@ -132,6 +133,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias mkdir='mkdir -p'
+
+alias choregraphe='/opt/Aldebaran/Choregraphe\ Suite\ 2.4/bin/choregraphe_launcher'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
