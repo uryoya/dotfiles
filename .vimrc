@@ -28,6 +28,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 call neobundle#end()
 
@@ -133,6 +134,13 @@ let g:neocomplete#enable_at_startup = 1
 
 " markdown settings
 au BufRead,BufNewFile *.md set filetype=markdown
+" end
+
+" vim-indent-guides settings
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 " end
 
 " 自動インデント時の空白
