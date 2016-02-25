@@ -29,6 +29,7 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 call neobundle#end()
 
