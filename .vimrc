@@ -1,14 +1,23 @@
-"        _                    
-" _   __(_)___ ___  __________
-"| | / / / __ `__ \/ ___/ ___/
-"| |/ / / / / / / / /  / /__  
-"|___/_/_/ /_/ /_/_/   \___/  
-"                             
+"===============================================================================
+"                   _                                       _        
+"            _   __(_)___ ___  ___________________  ___ ___(_)__   _ 
+"           | | / / / __ `__ \/ ___/ ___/\___ \__ \/ __` __ \ \ \ | |
+"           | |/ / / / / / / / /  / /__    __\ \ \ \ \ \ \ \ \ \ \| |
+"           |___/_/_/ /_/ /_/_/   \___/    \___/  \_\_\ \_\ \_\_\___|
+"                                                                    
+"===============================================================================
+" Author : uryoya
+" Source : https://github.com/uryoya/dotfiles
+" Since  : 2015
+"===============================================================================
 
+"
+" neobundle's settings
+" 
 " vi互換モードで動作させない
-set nocompatible
-filetype off
-filetype plugin indent off
+if !&compatible
+    set nocompatible
+endif
 
 if has('vim_starting')
     set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
@@ -33,6 +42,11 @@ NeoBundle 'editorconfig/editorconfig-vim'
 
 call neobundle#end()
 
+" 
+" Vim settings
+"
+" ファイル別のインデント設定をON
+filetype plugin indent on
 " シンタックスハイライト
 syntax on
 " 画面のスクロール
@@ -60,6 +74,18 @@ set pumheight=10
 " 括弧入力時に、対応する括弧に一瞬飛ぶ
 set showmatch
 set matchtime=1
+" 自動インデント時の空白
+set shiftwidth=4
+" タブキーを押した時の空白
+set softtabstop=4
+" タブを半角スペースにする
+set expandtab
+" タブ文字を表示するときのサイズ
+set tabstop=4
+" 行との余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
+set smarttab
+" クリップボードの共有
+set clipboard=unnamed,autoselect
 " カラースキーマ設定
 set t_Co=256
 colorscheme molokai
@@ -144,17 +170,3 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 " end
 
-" 自動インデント時の空白
-set shiftwidth=4
-" タブキーを押した時の空白
-set softtabstop=4
-" タブを半角スペースにする
-set expandtab
-" タブ文字を表示するときのサイズ
-set tabstop=4
-" 行との余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
-set smarttab
-" クリップボードの共有
-set clipboard=unnamed,autoselect
-
-filetype plugin indent on
