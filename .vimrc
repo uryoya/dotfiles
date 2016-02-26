@@ -41,6 +41,8 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'editorconfig/editorconfig-vim'
 
 call neobundle#end()
+" 未インストールプラグインの自動チェック
+NeoBundleCheck
 
 " 
 " Vim settings
@@ -96,6 +98,10 @@ highlight Normal ctermbg=none
 set directory=~/.vim/tmp
 " DropboxのToDoファイルを編集
 command! Todo edit ~/Dropbox/memo/todo.txt
+
+" 
+" Mapping
+"
 " helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/
 nnoremap <Space>t :<C-u>tab help<Space>
 nnoremap <Space>v :<C-u>vertical belowright help<Space>
