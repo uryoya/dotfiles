@@ -18,7 +18,7 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=.vim//repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
 
 " Required:
 call dein#begin(expand('.vim/'))
@@ -31,6 +31,8 @@ call dein#add('Shougo/dein.vim')
 " UI tools
 call dein#add('itchyny/lightline.vim')  " Statusline/tabline plugin
 call dein#add('scrooloose/nerdtree')    " Showing file tree plugin
+" Input utility
+call dein#add('Shougo/neocomplete.vim') " 
 " By filetype or kind utils
 call dein#add('editorconfig/editorconfig-vim')  " EditorConfig vim plugin
 
@@ -148,21 +150,62 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+" ハイライト切り替え
+nnoremap <silent><Leader>h :noh<CR>
 
 " End Vim Settings -----------------------
 
 
 " Plugin Settings ------------------------
-" lightline settings
+" Lightline settings
 set laststatus=2
 let g:lightline = {
     \'colorscheme':'wombat'
     \}
-" end
+" End
 
-" nerdtree settigs
+" NERDtree settigs
 nnoremap <silent><Leader>e :NERDTreeToggle<CR>
-" end
+" End
+
+" Neocomplete settings
+let g:acp_enableAtStartup = 0   " Disable AutoComplPop
+let g:neocomplete#enable_at_startup = 1
+let g:neoocmplete#enable_smart_case = 1
+" Set minimum syntax keyword lenght.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+    \}
+
+" Define keyword
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*\'
+
+" Plugin key-mappngs
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complate_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "") . "\<CR>"
+endfunction
+" <TAB>: completion
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+
 
 " End Plugin Settings --------------------
 
