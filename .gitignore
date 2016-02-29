@@ -1,4 +1,5 @@
 .vim/bundle/*
-.vim/repos
+.vim/repos/*
+.vim/.dein/*
 !.vim/bundle/neobundle.vim
 .vim/tmp/*
