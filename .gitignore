@@ -3,3 +3,4 @@
 .vim/.dein/*
 !.vim/bundle/neobundle.vim
 .vim/tmp/*
+.vim/temp/*
