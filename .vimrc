@@ -4,45 +4,56 @@
 "           | | / / / __ `__ \/ ___/ ___/\___ \__ \/ __` __ \ \ \ | |
 "           | |/ / / / / / / / /  / /__    __\ \ \ \ \ \ \ \ \ \ \| |
 "           |___/_/_/ /_/ /_/_/   \___/    \___/  \_\_\ \_\ \_\_\___|
-"                                                                    
+"                               ~Dein.vim Edition~
 "===============================================================================
 " Author : uryoya
 " Source : https://github.com/uryoya/dotfiles
 " Since  : 2015
 "===============================================================================
 
-"
-" neobundle's settings
-" 
-" vi互換モードで動作させない
-if !&compatible
-    set nocompatible
+"dein Scripts-----------------------------
+" setting from https://github.com/Shougo/dein.vim/blob/master/bin/installer.sh
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-if has('vim_starting')
-    set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
+" Required:
+set runtimepath^=.vim//repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('.vim/'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+" UI tools
+call dein#add('itchyny/lightline.vim')  " Statusline/tabline plugin
+call dein#add('scrooloose/nerdtree')    " Showing file tree plugin
+" By filetype or kind utils
+call dein#add('editorconfig/editorconfig-vim')  " EditorConfig vim plugin
+
+"call dein#add('Shougo/neosnippet.vim')
+"call dein#add('Shougo/neosnippet-snippets')
+
+" You can specify revision/branch/tag.
+"call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
 endif
 
-call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+"End dein Scripts-------------------------
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
 
-" My Bundles here:
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'editorconfig/editorconfig-vim'
-
-call neobundle#end()
-" 未インストールプラグインの自動チェック
-NeoBundleCheck
 
 " 
 " Vim settings
@@ -61,8 +72,8 @@ set nowrapscan " 最後の語句の次に最初の語句にループして検索
 " 自動インデント
 set autoindent
 " スペルチェック
-set spell
-set spelllang=en,cjk " 有効：英語、無効：日本語
+" set spell
+" set spelllang=en,cjk " 有効：英語、無効：日本語
 " カーソルの位置表示
 set ruler
 " 行番号
@@ -139,6 +150,8 @@ nnoremap <Right> <C-f>
 nnoremap <Up> <C-y>
 nnoremap <Down> <C-e>
 
+
+
 "--------------------------------------------------
 " プラグインの設定
 "--------------------------------------------------
@@ -149,30 +162,66 @@ let g:lightline = {
     \}
 " end
 
-" neocomplete.vim と jedi.vimの連携
-autocmd FileType python setlocal omnifunc=jedi#completions
-
-let g:jedi#auto_vim_configuration = 0
-
-if !exists('g:neocomplete#force_omni_input_patterns')
-            let g:neocomplete#force_omni_input_patterns = {}
-endif
-" end
-
 " nerdtree settigs
 nnoremap <silent><Space>e :NERDTreeToggle<CR>
 " end
-let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+"let g:neocomplete#enable_at_startup = 1
 
-" markdown settings
-au BufRead,BufNewFile *.md set filetype=markdown
-" end
+"" neocomplete.vim と jedi.vimの連携
+"autocmd FileType python setlocal omnifunc=jedi#completions
+"
+"let g:jedi#auto_vim_configuration = 0
+"
+"if !exists('g:neocomplete#force_omni_input_patterns')
+"            let g:neocomplete#force_omni_input_patterns = {}
+"endif
+"" end
+"
+"
+"" markdown settings
+"au BufRead,BufNewFile *.md set filetype=markdown
+"" end
+"
+"" vim-indent-guides settings
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_start_level = 2
+"let g:indent_guides_guide_size = 1
+"let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+"" end
 
-" vim-indent-guides settings
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-" end
 
+
+
+""
+"" neobundle's settings
+"" 
+"" vi互換モードで動作させない
+"if !&compatible
+"    set nocompatible
+"endif
+"
+"if has('vim_starting')
+"    set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
+"endif
+"
+"call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+"
+"" Let NeoBundle manage NeoBundle
+"NeoBundleFetch 'Shougo/neobundle.vim'
+"
+"" My Bundles here:
+"NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'Shougo/neocomplete.vim'
+"NeoBundle 'davidhalter/jedi-vim'
+""NeoBundle 'itchyny/lightline.vim'
+""NeoBundle 'scrooloose/nerdtree'
+"NeoBundle 'plasticboy/vim-markdown'
+"NeoBundle 'kannokanno/previm'
+"NeoBundle 'tyru/open-browser.vim'
+"NeoBundle 'nathanaelkane/vim-indent-guides'
+""NeoBundle 'editorconfig/editorconfig-vim'
+"
+"call neobundle#end()
+"" 未インストールプラグインの自動チェック
+"NeoBundleCheck
