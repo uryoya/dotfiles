@@ -54,13 +54,8 @@ endif
 "End dein Scripts-------------------------
 
 
-
-" 
-" Vim settings
-"
-" ファイル別のインデント設定をON
-filetype plugin indent on
-" シンタックスハイライト
+" Vim Settings ---------------------------
+let mapleader = "\<Space>"
 syntax on
 " 画面のスクロール
 set nowrap
@@ -110,12 +105,9 @@ set directory=~/.vim/tmp
 " DropboxのToDoファイルを編集
 command! Todo edit ~/Dropbox/memo/todo.txt
 
-" 
-" Mapping
-"
 " helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/
-nnoremap <Space>t :<C-u>tab help<Space>
-nnoremap <Space>v :<C-u>vertical belowright help<Space>
+nnoremap <Leader>t :<C-u>tab help<Space>
+nnoremap <Leader>v :<C-u>vertical belowright help<Space>
 " MoveToNewTab
 nnoremap <silent> tm :<C-u>call <SID>MoveToNewTab()<CR>
 function! s:MoveToNewTab()
@@ -149,12 +141,18 @@ nnoremap <Left> <C-b>
 nnoremap <Right> <C-f>
 nnoremap <Up> <C-y>
 nnoremap <Down> <C-e>
+" システムのクリップボードにコピー&ペースト
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" End Vim Settings -----------------------
 
 
-
-"--------------------------------------------------
-" プラグインの設定
-"--------------------------------------------------
+" Plugin Settings ------------------------
 " lightline settings
 set laststatus=2
 let g:lightline = {
@@ -163,8 +161,13 @@ let g:lightline = {
 " end
 
 " nerdtree settigs
-nnoremap <silent><Space>e :NERDTreeToggle<CR>
+nnoremap <silent><Leader>e :NERDTreeToggle<CR>
 " end
+
+" End Plugin Settings --------------------
+
+
+
 "let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 "let g:neocomplete#enable_at_startup = 1
 
