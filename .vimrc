@@ -17,28 +17,6 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-"set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
-"
-"call dein#begin(expand('~/.vim/'))
-"
-"" Let dein manage dein
-"call dein#add('Shougo/dein.vim')
-"
-"" Add or remove your plugins here:
-"" UI tools
-"call dein#add('itchyny/lightline.vim')  " Statusline/tabline plugin
-"call dein#add('scrooloose/nerdtree')    " Showing file tree plugin
-"" Input utility
-"call dein#add('Shougo/neocomplete.vim') " 
-"" By filetype or kind utils
-"call dein#add('editorconfig/editorconfig-vim')  " EditorConfig vim plugin
-"" Color scheme
-"call dein#add('tomasr/molokai')
-"call dein#add('sickill/vim-monokai')
-"call dein#add('jonathanfilip/vim-lucius')
-"call dein#add('jnurmine/zenburn')
-"call dein#add('AlessandroYorba/Sierra')
-
 " idea from http://qiita.com/delphinus35/items/00ff2c0ba972c6e41542
 " プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/.vim')
