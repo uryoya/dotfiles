@@ -2,4 +2,5 @@
 .vim/.dein/*
 .vim/tmp/*
 .vim/temp/*
+.vim/cache_vim
 !.vim/rc/*

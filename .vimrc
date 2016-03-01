@@ -17,41 +17,58 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required:
-set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
+"set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
+"
+"call dein#begin(expand('~/.vim/'))
+"
+"" Let dein manage dein
+"call dein#add('Shougo/dein.vim')
+"
+"" Add or remove your plugins here:
+"" UI tools
+"call dein#add('itchyny/lightline.vim')  " Statusline/tabline plugin
+"call dein#add('scrooloose/nerdtree')    " Showing file tree plugin
+"" Input utility
+"call dein#add('Shougo/neocomplete.vim') " 
+"" By filetype or kind utils
+"call dein#add('editorconfig/editorconfig-vim')  " EditorConfig vim plugin
+"" Color scheme
+"call dein#add('tomasr/molokai')
+"call dein#add('sickill/vim-monokai')
+"call dein#add('jonathanfilip/vim-lucius')
+"call dein#add('jnurmine/zenburn')
+"call dein#add('AlessandroYorba/Sierra')
 
-" Required:
-call dein#begin(expand('~/.vim/'))
+" idea from http://qiita.com/delphinus35/items/00ff2c0ba972c6e41542
+" プラグインが実際にインストールされるディレクトリ
+let s:dein_dir = expand('~/.vim')
+" dein.vim本体
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
+" dein.vimがなければgithubからcloneしてくる
+if &runtimepath !~# '/dein.vim'
+    if !isdirectory(s:dein_repo_dir)
+        execute '!git clone https://github.com/Shougo/dein.vim.git' s:dein_repo_dir
+    endif
+    execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
 
-" Add or remove your plugins here:
-" UI tools
-call dein#add('itchyny/lightline.vim')  " Statusline/tabline plugin
-call dein#add('scrooloose/nerdtree')    " Showing file tree plugin
-" Input utility
-call dein#add('Shougo/neocomplete.vim') " 
-" By filetype or kind utils
-call dein#add('editorconfig/editorconfig-vim')  " EditorConfig vim plugin
-" Color scheme
-call dein#add('tomasr/molokai')
-call dein#add('sickill/vim-monokai')
-call dein#add('jonathanfilip/vim-lucius')
-call dein#add('jnurmine/zenburn')
-call dein#add('AlessandroYorba/Sierra')
+" 設定開始
+call dein#begin(s:dein_dir)
 
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
+" プラグインリストを収めたTOMLファイル
+let s:toml = '~/.vim/rc/dein.toml'
+let s:toml_lazy = '~/.vim/rc/dein_lazy.toml'
 
-" You can specify revision/branch/tag.
-"call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+" TOMLを読み込み、キャッシュしておく
+if dein#load_cache([expand('<sfile>'), s:toml, s:toml_lazy])
+    call dein#load_toml(s:toml, {'lazy' : 0})
+    call dein#load_toml(s:toml_lazy, {'lazy' : 1})
+    call dein#save_cache()
+endif
 
-" Required:
 call dein#end()
 
-" Required:
 filetype plugin indent on
 
 " If you want to install not installed plugins on startup.
