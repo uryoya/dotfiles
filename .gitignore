@@ -1,6 +1,5 @@
-.vim/bundle/*
 .vim/repos/*
 .vim/.dein/*
-!.vim/bundle/neobundle.vim
 .vim/tmp/*
 .vim/temp/*
+!.vim/rc/*
