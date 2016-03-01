@@ -35,6 +35,12 @@ call dein#add('scrooloose/nerdtree')    " Showing file tree plugin
 call dein#add('Shougo/neocomplete.vim') " 
 " By filetype or kind utils
 call dein#add('editorconfig/editorconfig-vim')  " EditorConfig vim plugin
+" Color scheme
+call dein#add('tomasr/molokai')
+call dein#add('sickill/vim-monokai')
+call dein#add('jonathanfilip/vim-lucius')
+call dein#add('jnurmine/zenburn')
+call dein#add('AlessandroYorba/Sierra')
 
 "call dein#add('Shougo/neosnippet.vim')
 "call dein#add('Shougo/neosnippet-snippets')
@@ -99,7 +105,10 @@ set clipboard=unnamed,autoselect
 " カラースキーマ設定
 set t_Co=256
 colorscheme molokai
-let g:molokai_origianl=1
+"colorscheme monokai
+"colorscheme lucius
+"colorscheme zenburn
+"colorscheme sierra
 set background=dark
 highlight Normal ctermbg=none
 " スワップファイル作成ディレクトリの指定
@@ -205,69 +214,3 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
-
-
-" End Plugin Settings --------------------
-
-
-
-"let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-"let g:neocomplete#enable_at_startup = 1
-
-"" neocomplete.vim と jedi.vimの連携
-"autocmd FileType python setlocal omnifunc=jedi#completions
-"
-"let g:jedi#auto_vim_configuration = 0
-"
-"if !exists('g:neocomplete#force_omni_input_patterns')
-"            let g:neocomplete#force_omni_input_patterns = {}
-"endif
-"" end
-"
-"
-"" markdown settings
-"au BufRead,BufNewFile *.md set filetype=markdown
-"" end
-"
-"" vim-indent-guides settings
-"let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_start_level = 2
-"let g:indent_guides_guide_size = 1
-"let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
-"" end
-
-
-
-
-""
-"" neobundle's settings
-"" 
-"" vi互換モードで動作させない
-"if !&compatible
-"    set nocompatible
-"endif
-"
-"if has('vim_starting')
-"    set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
-"endif
-"
-"call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
-"
-"" Let NeoBundle manage NeoBundle
-"NeoBundleFetch 'Shougo/neobundle.vim'
-"
-"" My Bundles here:
-"NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'Shougo/neocomplete.vim'
-"NeoBundle 'davidhalter/jedi-vim'
-""NeoBundle 'itchyny/lightline.vim'
-""NeoBundle 'scrooloose/nerdtree'
-"NeoBundle 'plasticboy/vim-markdown'
-"NeoBundle 'kannokanno/previm'
-"NeoBundle 'tyru/open-browser.vim'
-"NeoBundle 'nathanaelkane/vim-indent-guides'
-""NeoBundle 'editorconfig/editorconfig-vim'
-"
-"call neobundle#end()
-"" 未インストールプラグインの自動チェック
-"NeoBundleCheck
