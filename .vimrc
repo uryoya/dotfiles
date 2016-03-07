@@ -67,11 +67,6 @@ set hlsearch " 検索結果ハイライト
 set ignorecase " 大文字小文字を無視
 set smartcase " 検索に大文字を入れた場合大文字小文字を区別
 set nowrapscan " 最後の語句の次に最初の語句にループして検索しない
-" 自動インデント
-set autoindent
-" スペルチェック
-" set spell
-" set spelllang=en,cjk " 有効：英語、無効：日本語
 " カーソルの位置表示
 set ruler
 " 行番号
@@ -85,16 +80,13 @@ set pumheight=10
 " 括弧入力時に、対応する括弧に一瞬飛ぶ
 set showmatch
 set matchtime=1
-" 自動インデント時の空白
-set shiftwidth=4
-" タブキーを押した時の空白
-set softtabstop=4
-" タブを半角スペースにする
-set expandtab
-" タブ文字を表示するときのサイズ
-set tabstop=4
-" 行との余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
-set smarttab
+" indent
+set autoindent " 自動インデント
+set shiftwidth=4 " 自動インデント時の空白
+set softtabstop=4 " タブキーを押した時の空白
+set expandtab " タブを半角スペースにする
+set tabstop=4 " タブ文字を表示するときのサイズ
+set smarttab " 行との余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
 " クリップボードの共有
 set clipboard=unnamed,autoselect
 " 80文字目に線を入れる
@@ -108,7 +100,7 @@ set t_Co=256
 "colorscheme sierra
 colorscheme hybrid
 set background=dark
-highlight Normal ctermbg=none
+"highlight Normal ctermbg=none
 " スワップファイル作成ディレクトリの指定
 set directory=~/.vim/tmp
 " DropboxのToDoファイルを編集
