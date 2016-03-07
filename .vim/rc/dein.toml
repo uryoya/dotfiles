@@ -7,10 +7,10 @@ repo = 'Shougo/dein.vim'
 # UI
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-[[plugins]]
-repo = 'tomasr/molokai'
 
 # File utility
+[[plugins]]
+repo = 'Shougo/unite.vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 

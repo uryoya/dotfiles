@@ -97,13 +97,16 @@ set tabstop=4
 set smarttab
 " クリップボードの共有
 set clipboard=unnamed,autoselect
+" 80文字目に線を入れる
+set colorcolumn=80
 " カラースキーマ設定
 set t_Co=256
-colorscheme molokai
+"colorscheme molokai
 "colorscheme monokai
 "colorscheme lucius
 "colorscheme zenburn
 "colorscheme sierra
+colorscheme hybrid
 set background=dark
 highlight Normal ctermbg=none
 " スワップファイル作成ディレクトリの指定
@@ -156,6 +159,8 @@ vmap <Leader>p "+p
 vmap <Leader>P "+P
 " ハイライト切り替え
 nnoremap <silent><Leader>h :noh<CR>
+" pythonでdocstringを表示しない
+autocmd FileType python setlocal completeopt-=preview
 
 " End Vim Settings -----------------------
 
