@@ -152,7 +152,7 @@ vmap <Leader>P "+P
 " ハイライト切り替え
 nnoremap <silent><Leader>h :noh<CR>
 " pythonでdocstringを表示しない
-autocmd FileType python setlocal completeopt-=preview
+"autocmd FileType python setlocal completeopt-=preview
 
 " End Vim Settings -----------------------
 

@@ -17,3 +17,7 @@ repo = 'scrooloose/nerdtree'
 # File import utils
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
+
+# Color scheme
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
