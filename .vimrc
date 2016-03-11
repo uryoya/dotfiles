@@ -87,6 +87,8 @@ set softtabstop=4 " タブキーを押した時の空白
 set expandtab " タブを半角スペースにする
 set tabstop=4 " タブ文字を表示するときのサイズ
 set smarttab " 行との余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
+" enable delete indent, eol, start by backspace
+set backspace=indent,eol,start
 " クリップボードの共有
 set clipboard=unnamed,autoselect
 " 80文字目に線を入れる
@@ -149,6 +151,9 @@ nmap <Leader>p "+p
 nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
+" ファイル操作
+nnoremap <silent><Leader>q :q<CR>
+nnoremap <silent><Leader>w :w<CR>
 " ハイライト切り替え
 nnoremap <silent><Leader>h :noh<CR>
 " pythonでdocstringを表示しない
