@@ -5,7 +5,14 @@
 # http://mollifier.mit-license.org/
 
 ########################################
-screenfetch
+
+# screenfetch
+if [ $COLUMNS -gt 128 ] ; then
+    curl -4 'http://wttr.in/Atsugi'
+elif [ $COLUMNS -gt 100 ] ; then
+    screenfetch
+fi
+
 # 環境変数
 export LANG=ja_JP.UTF-8
 export QT_IM_MODULE=fcitx
