@@ -1,0 +1,27 @@
+# TOML Plugin List
+# idea from http://qiita.com/delphinus35/items/00ff2c0ba972c6e41542
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# UI
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# File utility
+[[plugins]]
+repo = 'Shougo/unite.vim'
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# File import utils
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+# Color scheme
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+# python syntax
+[[plugins]]
+repo = 'hdima/python-syntax'
