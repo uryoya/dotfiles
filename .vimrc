@@ -102,9 +102,8 @@ set t_Co=256
 "colorscheme sierra
 colorscheme hybrid
 set background=dark
-"highlight Normal ctermbg=none
-" スワップファイル作成ディレクトリの指定
-set directory=~/.vim/tmp
+" don't create swapfiles
+set noswapfile
 " DropboxのToDoファイルを編集
 command! Todo edit ~/Dropbox/memo/todo.txt
 
