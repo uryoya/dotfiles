@@ -214,3 +214,8 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " python syntax settings
 let python_highlight_all = 1
+" End
+
+" Unite.vim settings
+nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
+" End
