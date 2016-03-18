@@ -1,2 +1,4 @@
 .vim
 !.vim/rc/*
+nvim/dein
+!nvim/dein/rc/*

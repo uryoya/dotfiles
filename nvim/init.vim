@@ -1,5 +1,40 @@
 " Neovim 
 
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+let s:dein_dir = expand('~/.config/nvim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if &runtimepath !~# '/dein.vim'
+    if !isdirectory(s:dein_repo_dir)
+        execute '!git clone https://github.com/Shougo/dein.vim.git' s:dein_repo_dir
+    endif
+    execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+call dein#begin(s:dein_dir)
+
+let s:toml = '~/.config/nvim/dein/rc/dein.toml'
+let s:toml_lazy = '~/.config/nvim/dein/rc/dein_lazy.toml'
+if dein#load_cache([expand('<sfile>'), s:toml, s:toml_lazy])
+    call dein#load_toml(s:toml, {'lazy': 0})
+    call dein#load_toml(s:toml_lazy, {'lazy': 1})
+    call dein#save_cache()
+endif
+
+call dein#end()
+
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
 " Vim Settings ---------------------------
 let mapleader = "\<Space>"
 
@@ -13,7 +48,7 @@ set pumheight=10    " 補完メニューの高さ
 set colorcolumn=80  " 80文字目に線を入れる
 " カラースキーマ設定
 set t_Co=256
-colorscheme default
+colorscheme hybrid
 set background=dark
 
 " 括弧入力時に、対応する括弧に一瞬飛ぶ
