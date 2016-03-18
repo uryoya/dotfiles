@@ -1,0 +1,16 @@
+# TOML Plugin List
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# UI
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# File import utils
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+# Color scheme
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
