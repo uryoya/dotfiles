@@ -141,4 +141,8 @@ let g:lightline = {
 " Unite.vim settings
 nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
 " End
+
+" NERDtree settigs
+nnoremap <silent><Leader>e :NERDTreeToggle<CR>
+" End
 " End ------------------------------------

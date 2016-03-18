@@ -21,7 +21,3 @@ repo = 'editorconfig/editorconfig-vim'
 # Color scheme
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
-
-# python syntax
-[[plugins]]
-repo = 'hdima/python-syntax'

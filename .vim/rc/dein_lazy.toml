@@ -5,25 +5,11 @@
 repo = 'Shougo/neocomplete.vim'
 on_i = 1
 
-# カラースキーム
-#[[plugins]]
-#repo = 'tomasr/molokai'
-#on_cmd = 'colorscheme molokai'
-#[[plugins]]
-#repo = 'jonathanfilip/vim-lucius'
-#on_cmd = 'colorscheme lucius'
-#[[plugins]]
-#repo = 'w0ng/vim-hybrid'
-#on_cmd = 'colorscheme hybrid'
-#[[plugins]]
-#repo = 'jnurmine/Zenburn'
-#on_cmd = 'colorscheme zenburn'
-
 # ファイル別で読み込むもの
 # Python
 [[plugins]]
 repo = 'hynek/vim-python-pep8-indent'
 on_ft = ['python', 'python3', 'djangohtml']
-#[[plugins]]
-#repo = 'hdima/python-syntax'
-#on_ft = ['python', 'python3']
+[[plugins]]
+repo = 'hdima/python-syntax'
+on_ft = ['python', 'python3']

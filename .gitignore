@@ -1,5 +1,5 @@
 .vim/
-!.vim/rc/*
 nvim/dein/
-!nvim/dein/rc/dein.toml
-!nvim/dein/rc/dein_lazy.toml
+*~
+!.vim/rc/*
+!nvim/dein/rc/*
