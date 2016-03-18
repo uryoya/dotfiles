@@ -17,6 +17,7 @@ fi
 export LANG=ja_JP.UTF-8
 export QT_IM_MODULE=fcitx
 export GOPATH=$HOME/.go
+export XDG_CONFIG_HOME=~/.config
 export PATH=$HOME/.go/bin:$PATH
 
 # /usr/local/bin がない場合に追加
