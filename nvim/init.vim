@@ -129,3 +129,16 @@ nnoremap <silent><Leader>h :noh<CR>
 "autocmd FileType python setlocal completeopt-=preview
 
 " End Vim Settings -----------------------
+
+" Plugin Settings ------------------------
+" Lightline settings
+set laststatus=2
+let g:lightline = {
+    \'colorscheme':'wombat'
+    \}
+" End
+
+" Unite.vim settings
+nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
+" End
+" End ------------------------------------
