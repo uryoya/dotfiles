@@ -5,23 +5,16 @@
 # http://mollifier.mit-license.org/
 
 ########################################
-
-# screenfetch
-if [ $COLUMNS -gt 128 ] ; then
-    curl -4 'http://wttr.in/Atsugi'
-elif [ $COLUMNS -gt 100 ] ; then
-    screenfetch
-fi
-
 # 環境変数
 export LANG=ja_JP.UTF-8
 export QT_IM_MODULE=fcitx
 export GOPATH=$HOME/.go
-export XDG_CONFIG_HOME=~/.config
+export XDG_CONFIG_HOME=$HOME/.config
 export PATH=$HOME/.go/bin:$PATH
 
-# /usr/local/bin がない場合に追加
+# PATHにない場合に追加
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
+#[[ $PATH =~ /$HOME/.go/bin:$PATH ]] || export $HOME/.go/bin:$PATH
 
 # 色を使用出来るようにする
 autoload -Uz colors
