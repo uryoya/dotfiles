@@ -10,11 +10,11 @@ export LANG=ja_JP.UTF-8
 export QT_IM_MODULE=fcitx
 export GOPATH=$HOME/.go
 export XDG_CONFIG_HOME=$HOME/.config
-export PATH=$HOME/.go/bin:$PATH
+#export PATH=$HOME/.go/bin:$PATH
 
 # PATHにない場合に追加
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
-#[[ $PATH =~ /$HOME/.go/bin:$PATH ]] || export $HOME/.go/bin:$PATH
+[[ $PATH =~ $HOME/.go/bin ]] || export PATH=$HOME/.go/bin:$PATH
 
 # 色を使用出来るようにする
 autoload -Uz colors
