@@ -35,8 +35,8 @@ endif
 "call dein#begin(s:dein_dir)
 
 " プラグインリストを収めたTOMLファイル
-let s:toml = '~/.vim/dein/rc/dein.toml'
-let s:toml_lazy = '~/.vim/dein/rc/dein_lazy.toml'
+let s:toml = '~/.vim/rc/dein.toml'
+let s:toml_lazy = '~/.vim/rc/dein_lazy.toml'
 if dein#load_state(s:dein_dir)
     call dein#begin(s:dein_dir)
     call dein#load_toml(s:toml, {'lazy': 0})

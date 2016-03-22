@@ -1,6 +1,3 @@
 .vim/dein/
 nvim/dein/
 *~
-!.vim/rc/*
-!.vim/after/ftplugin/*
-!nvim/dein/rc/*
