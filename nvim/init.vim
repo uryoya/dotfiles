@@ -1,10 +1,6 @@
 " Neovim 
 
 "dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
 let s:dein_dir = expand('~/.config/nvim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if &runtimepath !~# '/dein.vim'
@@ -45,7 +41,7 @@ set nowrap      " 行を折り返さない
 set pumheight=10    " 補完メニューの高さ
 set colorcolumn=80  " 80文字目に線を入れる
 " カラースキーマ設定
-set t_Co=256
+"set t_Co=256
 colorscheme hybrid
 set background=dark
 
