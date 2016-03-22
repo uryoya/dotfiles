@@ -1,9 +1,20 @@
 # TOML Lazy Plugin List
 
-# 特定のコマンドが呼ばれた時
+# ファイル操作
 [[plugins]]
 repo = 'Shougo/unite.vim'
 on_cmd = 'Unite'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = 'NERDTree'
+
+# 入力補助
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+'''
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = ['python', 'python3', 'djangohtml']

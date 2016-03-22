@@ -18,3 +18,7 @@ repo = 'w0ng/vim-hybrid'
 # python indent support
 [[plugins]]
 repo = 'hynek/vim-python-pep8-indent'
+
+# TOML syntax highlight
+[[plugins]]
+repo = 'cespare/vim-toml'
