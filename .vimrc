@@ -19,7 +19,7 @@ endif
 
 " idea from http://qiita.com/delphinus35/items/00ff2c0ba972c6e41542
 " プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.vim')
+let s:dein_dir = expand('~/.vim/dein')
 " dein.vim本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -31,21 +31,27 @@ if &runtimepath !~# '/dein.vim'
     execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-" 設定開始
-call dein#begin(s:dein_dir)
+"" 設定開始
+"call dein#begin(s:dein_dir)
 
 " プラグインリストを収めたTOMLファイル
-let s:toml = '~/.vim/rc/dein.toml'
-let s:toml_lazy = '~/.vim/rc/dein_lazy.toml'
-
-" TOMLを読み込み、キャッシュしておく
-if dein#load_cache([expand('<sfile>'), s:toml, s:toml_lazy])
-    call dein#load_toml(s:toml, {'lazy' : 0})
-    call dein#load_toml(s:toml_lazy, {'lazy' : 1})
-    call dein#save_cache()
+let s:toml = '~/.vim/dein/rc/dein.toml'
+let s:toml_lazy = '~/.vim/dein/rc/dein_lazy.toml'
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
+    call dein#load_toml(s:toml, {'lazy': 0})
+    call dein#load_toml(s:toml_lazy, {'lazy': 1})
+    call dein#end()
+    call dein#save_state()
 endif
-
-call dein#end()
+"" TOMLを読み込み、キャッシュしておく
+"if dein#load_cache([expand('<sfile>'), s:toml, s:toml_lazy])
+"    call dein#load_toml(s:toml, {'lazy' : 0})
+"    call dein#load_toml(s:toml_lazy, {'lazy' : 1})
+"    call dein#save_cache()
+"endif
+"
+"call dein#end()
 
 filetype plugin indent on
 
