@@ -1,21 +1,16 @@
 # dotfiles
-## 使い方
-    $ cd dotfiles
-    $ dotfilesLink.sh
-    $ git submodule init
-    $ git submodule update
-    $ vim
-    : NeoBundleInstall
+## インストール
 
-## httpでインストールした場合
-.gitmodulesを以下の通り変更
+    $ git clone https://github.com/uryoya/dotfiles.git ~/
+    $ cd ~/dotfiles
+    $ sh dotfilesLink.sh
 
-`url = https://github.com/Shougo/neobundle.vim.git`
-
-## Neovimを使う場合に必要な操作
-- pythonのサポート
-	$ pip install neovim
-	$ pip3 install neovim
-
-- クリップボードの有効化
-	$ sudo apt install xsel
+## 要件
+* vim
+    - +lua
+* neovim
+    - +python, +python3 (from pip)
+    - jedi (from pip)
+    - xsel (clipboard suppurt from apt, pacman,... and more)
+* zsh
+    - peco
