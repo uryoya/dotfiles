@@ -11,6 +11,6 @@
 * neovim
     - +python, +python3 (from pip)
     - jedi (from pip)
-    - xsel (clipboard suppurt from apt, pacman,... and more)
+    - xsel (clipboard support from apt, pacman,... and more)
 * zsh
     - peco
