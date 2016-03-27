@@ -14,6 +14,8 @@ repo = 'editorconfig/editorconfig-vim'
 # Color scheme
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
+[[plugins]]
+repo = 'chriskempson/vim-tomorrow-theme'
 
 # python indent support
 [[plugins]]

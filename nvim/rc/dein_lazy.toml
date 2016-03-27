@@ -17,7 +17,7 @@ hook_add = '''
 '''
 [[plugins]]
 repo = 'zchee/deoplete-jedi'
-on_ft = ['python', 'python3', 'djangohtml']
+on_ft = ['python', 'python3', 'htmldjango']
 hook_add = '''
     let g:deoplete#sources#jedi#statement_length = 0
 '''

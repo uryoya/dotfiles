@@ -73,6 +73,12 @@ set backspace=indent,eol,start  " バックスペースで色々消せるよう�
 nnoremap <Leader>t :<C-u>tab help<Space>
 nnoremap <Leader>v :<C-u>vertical belowright help<Space>
 
+" Neovim config
+if has('unix')
+    let g:python_host_prog = '/usr/bin/python2'
+    let g:python3_host_prog = '/usr/bin/python3'
+endif
+
 " MoveToNewTab
 nnoremap <silent> tm :<C-u>call <SID>MoveToNewTab()<CR>
 function! s:MoveToNewTab()
