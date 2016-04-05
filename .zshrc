@@ -137,7 +137,7 @@ alias mv='mv -i'
 
 alias mkdir='mkdir -p'
 
-alias choregraphe='/opt/Aldebaran/Choregraphe\ Suite\ 2.4/bin/choregraphe_launcher'
+#alias choregraphe='/opt/Aldebaran/Choregraphe\ Suite\ 2.4/bin/choregraphe_launcher'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '

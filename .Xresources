@@ -2,25 +2,21 @@
 ! ranger で画像が表示できないので透過はなし
 !URxvt.depth: 32
 !URxvt*.background: [70]#000000
-URxvt*.background: black
-URxvt*.foreground: snow
-urxvt.geometry: 80x30
-urxvt.saveLines: 4096
+URxvt*background: black
+URxvt*foreground: snow
+urxvt*geometry: 80x30
+urxvt*saveLines: 4096
 
 ! スクロールバー
-URxvt.scrollBar: false
+URxvt*scrollBar: false 
 
 ! fonts
-URxvt*.font: xft:ubuntu mono:size=11:antialias=true, \
-             xft:SourceHanCodeJP:size=11
-!URxvt*.boldFont: xft:Cica:bold:size=11:antialias=true
-!URxvt.italicFont:        xft:Cica:italic:size=11:antialias=true
-!URxvt.bolditalicFont:    xft:Cica:bold:italic:size=11:antialias=trueURxvt*.boldFont: xft:Cica:bold:size=11:antialias=true
-URxvt*.letterSpace: -1
+URxvt*font: xft:ubuntu mono:size=11:antialias=true
+!URxvt*.boldFont: xft:ubuntu mono:bold:size=11:antialias=true
+!URxvt.italicFont: xft:ubuntu mono:italic:size=11:antialias=true
+!URxvt.bolditalicFont: xft:ubuntu mono:bold:italic:size=11:antialias=true
+URxvt*letterSpace: -1
 
-! icon
-URxvt*.iconFile: /usr/share/icons/Faba/16x16/apps/terminal.svg
-
-URxvt*.perl-ext-common: xim-onthespot.
-URxvt*.inputMethod: fcitx
-URxvt*.preeditType: OnTheSpot
+URxvt*perl-ext-common: xim-onthespot.
+URxvt*inputMethod: fcitx
+URxvt*preeditType: OnTheSpot
