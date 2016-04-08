@@ -45,7 +45,7 @@ URxvt*color15: #d0d0d0
 !URxvt*background: black
 !URxvt*foreground: snow
 
-urxvt*geometry: 80x30
+urxvt*geometry: 128x40
 urxvt*saveLines: 4096
 
 ! スクロールバー
