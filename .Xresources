@@ -52,10 +52,14 @@ urxvt*saveLines: 4096
 URxvt*scrollBar: false 
 
 ! fonts
-URxvt*font: xft:ubuntu mono:size=11:antialias=true
-!URxvt*.boldFont: xft:ubuntu mono:bold:size=11:antialias=true
-!URxvt.italicFont: xft:ubuntu mono:italic:size=11:antialias=true
-!URxvt.bolditalicFont: xft:ubuntu mono:bold:italic:size=11:antialias=true
+URxvt*font: xft:ubuntu mono:size=11:antialias=true, \
+            xft:Takaoゴシック:antialias=true
+URxvt*.boldFont: xft:ubuntu mono:bold:size=11:antialias=true, \
+            xft:Takaoゴシック:antialias=true
+URxvt.italicFont: xft:ubuntu mono:italic:size=11:antialias=true, \
+            xft:Takaoゴシック:antialias=true
+URxvt.bolditalicFont: xft:ubuntu mono:bold:italic:size=11:antialias=true, \
+            xft:Takaoゴシック:antialias=true
 URxvt*letterSpace: -1
 
 URxvt*perl-ext-common: xim-onthespot.
