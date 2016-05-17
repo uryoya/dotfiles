@@ -41,13 +41,15 @@ set nowrap      " 行を折り返さない
 set pumheight=10    " 補完メニューの高さ
 set colorcolumn=80  " 80文字目に線を入れる
 " カラースキーマ設定
-"set t_Co=256
-colorscheme hybrid
+" hybird
 set background=dark
+let g:hybrid_custom_term_colors = 1
+let g:hybrid_reduced_contrast = 1
+colorscheme hybrid
 
-" 括弧入力時に、対応する括弧に一瞬飛ぶ
-set showmatch
-set matchtime=1
+"" 括弧入力時に、対応する括弧に一瞬飛ぶ
+"set showmatch
+"set matchtime=1
 
 " インデント
 set autoindent  " 自動インデント
@@ -68,6 +70,9 @@ set noswapfile  " スワップフィアルを作らない
 set wildmenu    " ファイル名補完の設定
 set backspace=indent,eol,start  " バックスペースで色々消せるようにする
 "set clipboard=unnamed,autoselect    " クリップボードの共有
+
+" nvim terminal
+let g:terminal_scrollback_buffer_size = 100000 
 
 " helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/
 nnoremap <Leader>t :<C-u>tab help<Space>
@@ -126,6 +131,7 @@ nnoremap <silent><Leader>w :w<CR>
 " ハイライト切り替え
 nnoremap <silent><Leader>h :noh<CR>
 " ターミナルから抜ける
+tnoremap <silent> jj <C-\><C-n>
 tnoremap <Esc> <C-\><C-n>
 " 画面分割での移動
 tnoremap <A-h> <C-\><C-n><C-w>h
