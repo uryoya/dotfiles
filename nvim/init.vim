@@ -34,6 +34,7 @@ let mapleader = "\<Space>"
 
 " 表示
 syntax on       " シンタックスハイライトをする
+"set termguicolors " enable true color
 set ruler       " カーソルの位置表示
 set number      " 行番号
 set showcmd     " 入力中のコマンドを表示する
@@ -43,9 +44,17 @@ set colorcolumn=80  " 80文字目に線を入れる
 " カラースキーマ設定
 " hybird
 set background=dark
-let g:hybrid_custom_term_colors = 1
-let g:hybrid_reduced_contrast = 1
 colorscheme hybrid
+"highlight Normal ctermbg=none
+" molokai
+"let g:molokai_original = 1
+"colorscheme molokai
+" terminalだけ背景透過
+"autocmd TermOpen * call SukeSuke()
+"function SukeSuke()
+"    highlight Normal ctermbg=none
+"endfunction
+"autocmd TermOpen * <buffer> call :SukeSuke()
 
 "" 括弧入力時に、対応する括弧に一瞬飛ぶ
 "set showmatch
@@ -131,8 +140,8 @@ nnoremap <silent><Leader>w :w<CR>
 " ハイライト切り替え
 nnoremap <silent><Leader>h :noh<CR>
 " ターミナルから抜ける
-tnoremap <silent> jj <C-\><C-n>
-tnoremap <Esc> <C-\><C-n>
+"tnoremap <silent> jj <C-\><C-n>
+"tnoremap <Esc> <C-\><C-n>
 " 画面分割での移動
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
@@ -142,8 +151,6 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
-" pythonでdocstringを表示しない
-"autocmd FileType python setlocal completeopt-=preview
 
 " End Vim Settings -----------------------
 

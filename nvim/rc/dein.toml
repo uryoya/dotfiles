@@ -16,6 +16,10 @@ repo = 'editorconfig/editorconfig-vim'
 repo = 'w0ng/vim-hybrid'
 [[plugins]]
 repo = 'chriskempson/vim-tomorrow-theme'
+[[plugins]]
+repo = 'sickill/vim-monokai'
+[[plugins]]
+repo = 'tomasr/molokai'
 
 # python indent support
 [[plugins]]
