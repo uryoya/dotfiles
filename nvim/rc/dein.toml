@@ -28,3 +28,6 @@ repo = 'hynek/vim-python-pep8-indent'
 # TOML syntax highlight
 [[plugins]]
 repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
