@@ -4,9 +4,6 @@
 [[plugins]]
 repo = 'Shougo/unite.vim'
 on_cmd = 'Unite'
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-on_cmd = 'NERDTree'
 
 # 入力補助
 [[plugins]]
