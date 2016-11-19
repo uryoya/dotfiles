@@ -117,8 +117,6 @@ nnoremap Q <Nop>
 " ; : 入れ替え
 nnoremap ; :
 nnoremap : ;
-" esc バインド
-inoremap <silent> jj <Esc>
 " 行末までヤンク
 nnoremap Y y$
 " 数値の増減
@@ -142,8 +140,7 @@ nnoremap <silent><Leader>w :w<CR>
 " ハイライト切り替え
 nnoremap <silent><Leader>h :noh<CR>
 " ターミナルから抜ける
-"tnoremap <silent> jj <C-\><C-n>
-"tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 " 画面分割での移動
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
