@@ -41,6 +41,8 @@ set showcmd     " 入力中のコマンドを表示する
 set nowrap      " 行を折り返さない
 set pumheight=10    " 補完メニューの高さ
 set colorcolumn=80  " 80文字目に線を入れる
+set ambiwidth=double    " emojiとかがいい感じに表示できる🍣🍣🍣
+set cursorline  " カーソルのある行がハイライトされる
 " カラースキーマ設定
 " hybird
 set background=dark
@@ -115,18 +117,11 @@ nnoremap Q <Nop>
 " ; : 入れ替え
 nnoremap ; :
 nnoremap : ;
-" esc バインド
-inoremap <silent> jj <Esc>
 " 行末までヤンク
 nnoremap Y y$
 " 数値の増減
 nnoremap + <C-a>
 nnoremap - <C-x>
-" 画面移動
-nnoremap <Left> <C-b>
-nnoremap <Right> <C-f>
-nnoremap <Up> <C-y>
-nnoremap <Down> <C-e>
 " システムのクリップボードにコピー&ペースト
 vmap <Leader>y "+y
 vmap <Leader>d "+d
@@ -140,8 +135,7 @@ nnoremap <silent><Leader>w :w<CR>
 " ハイライト切り替え
 nnoremap <silent><Leader>h :noh<CR>
 " ターミナルから抜ける
-"tnoremap <silent> jj <C-\><C-n>
-"tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 " 画面分割での移動
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j

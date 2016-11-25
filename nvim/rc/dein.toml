@@ -6,6 +6,11 @@ repo = 'Shougo/dein.vim'
 # UI
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+
 
 # File import utils
 [[plugins]]
