@@ -122,11 +122,6 @@ nnoremap Y y$
 " 数値の増減
 nnoremap + <C-a>
 nnoremap - <C-x>
-" 画面移動
-nnoremap <Left> <C-b>
-nnoremap <Right> <C-f>
-nnoremap <Up> <C-y>
-nnoremap <Down> <C-e>
 " システムのクリップボードにコピー&ペースト
 vmap <Leader>y "+y
 vmap <Leader>d "+d
