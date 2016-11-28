@@ -120,6 +120,7 @@ vmap <Leader>P "+P
 " ファイル操作
 nnoremap <silent><Leader>q :q<CR>
 nnoremap <silent><Leader>w :w<CR>
+nnoremap <silent><Leader>z :wq<CR>
 " ハイライト切り替え
 nnoremap <silent><Leader>h :noh<CR>
 " ターミナルから抜ける
@@ -133,6 +134,10 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+nnoremap <A->> <C-w>>
+nnoremap <A-<> <C-w><
+nnoremap <A-+> <C-w>+
+nnoremap <A--> <C-w>-
 
 
 "-------------------------------------------------------------------------------
