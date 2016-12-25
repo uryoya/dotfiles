@@ -37,3 +37,5 @@ repo = 'cespare/vim-toml'
 repo = 'rust-lang/rust.vim'
 [[plugins]]
 repo = 'lepture/vim-jinja'
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
