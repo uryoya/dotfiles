@@ -19,4 +19,4 @@ dotfiles = [
 for src, target in dotfiles:
     if target.exists():
         target.rename(target.name + '.org')
-    src.symlink_to(target)
+    target.symlink_to(src)
