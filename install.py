@@ -19,6 +19,6 @@ dotfiles = [
 
 for src, dst in dotfiles:
     try:
-        os.symlink(src, dst)
+        os.symlink(str(src), str(dst))
     except OSError as e:
         print(e)
