@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
+"""
+dotfilesをシステムにインストールする
+"""
 from pathlib import Path
+from argparse import ArgumentParser
 
 
 DOTFILES_DIR = Path.home() / 'dotfiles'
@@ -16,7 +20,24 @@ dotfiles = [
     [DOTFILES_DIR / '.tmux.conf', Path.home() / '.tmux.conf'],
 ]
 
-for src, target in dotfiles:
-    if target.exists():
-        target.rename(target.name + '.org')
-    target.symlink_to(src)
+def install():
+    for src, target in dotfiles:
+        if target.exists():
+            target.rename(target.name + '.org')
+        target.symlink_to(src)
+
+def uninstall():
+    for src, symlink in dotfiles:
+        if symlink.is_symlink():
+            symlink.unlink()
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser()
+    parser.add_argument('--uninstall', action='store_true')
+    argv = parser.parse_args()
+
+    if argv.uninstall:
+        uninstall()
+    else:
+        install()
