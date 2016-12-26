@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import os
 from pathlib import Path
 
 
@@ -17,8 +16,7 @@ dotfiles = [
     [DOTFILES_DIR / '.tmux.conf', Path.home() / '.tmux.conf'],
 ]
 
-for src, dst in dotfiles:
-    try:
-        os.symlink(str(src), str(dst))
-    except OSError as e:
-        print(e)
+for src, target in dotfiles:
+    if target.exists():
+        target.rename(target.name + '.org')
+    src.symlink_to(target)
