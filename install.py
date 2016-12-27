@@ -25,7 +25,7 @@ def install():
     """ インストール """
     for src, target in dotfiles:
         if target.exists():
-            target.rename(target.name + '.org')
+            target.rename(str(target) + '.org')
         target.symlink_to(src)
 
 def uninstall():
