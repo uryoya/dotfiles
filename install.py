@@ -9,6 +9,7 @@ from argparse import ArgumentParser
 DOTFILES_DIR = Path.home() / 'dotfiles'
 
 dotfiles = [
+#   [Dotfileのパス,  ターゲットファイルのパス]
     [DOTFILES_DIR / '.Xresources', Path.home() / '.Xresources'],
     [DOTFILES_DIR / '.vimrc', Path.home() / '.vimrc'],
     [DOTFILES_DIR / '.gvimrc', Path.home() / '.gvimrc'],
@@ -21,12 +22,14 @@ dotfiles = [
 ]
 
 def install():
+    """ インストール """
     for src, target in dotfiles:
         if target.exists():
             target.rename(target.name + '.org')
         target.symlink_to(src)
 
 def uninstall():
+    """ アンインストール """
     for src, symlink in dotfiles:
         if symlink.is_symlink():
             symlink.unlink()
