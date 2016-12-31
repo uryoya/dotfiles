@@ -18,13 +18,7 @@ repo = 'editorconfig/editorconfig-vim'
 
 # Color scheme
 [[plugins]]
-repo = 'w0ng/vim-hybrid'
-[[plugins]]
-repo = 'chriskempson/vim-tomorrow-theme'
-[[plugins]]
-repo = 'sickill/vim-monokai'
-[[plugins]]
-repo = 'tomasr/molokai'
+repo = 'joshdick/onedark.vim'
 
 # python indent support
 [[plugins]]

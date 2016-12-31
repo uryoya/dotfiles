@@ -47,10 +47,7 @@ set colorcolumn=80  " 80文字目に線を入れる
 set ambiwidth=double    " emojiとかがいい感じに表示できる🍣🍣🍣
 set cursorline  " カーソルのある行がハイライトされる
 set termguicolors   " True color
-" カラースキーマ設定
-" hybird
-set background=dark
-colorscheme hybrid
+colorscheme onedark
 
 " インデント
 set autoindent  " 自動インデント
@@ -147,7 +144,7 @@ nnoremap <A--> <C-w>-
 " Lightline settings
 set laststatus=2
 let g:lightline = {
-    \'colorscheme':'wombat'
+    \'colorscheme':'onedark'
     \}
 
 " Unite.vim settings
