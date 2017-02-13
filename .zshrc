@@ -32,8 +32,12 @@ SAVEHIST=1000000
 # 1行表示
 # PROMPT="%~ %# "
 # 2行表示
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-%# "
+#PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
+#%# "
+#PROMPT="%F{210}❯ %n%F{104}❯ %m%F{078}❯ %~
+#%{${fg[default]}%}%# "
+PROMPT="%F{210}%n@%F{210}%m❯%F{078}❯ %~❯%F{104}❯ 
+%{${fg[default]}%}%# "
 
 
 # 単語の区切り文字を指定する
@@ -137,6 +141,9 @@ alias mv='mv -i'
 
 alias mkdir='mkdir -p'
 
+alias gs='git status --short --branch'
+alias g='git'
+
 alias g++='g++ -std=c++11'
 
 #alias choregraphe='/opt/Aldebaran/Choregraphe\ Suite\ 2.4/bin/choregraphe_launcher'
@@ -202,3 +209,6 @@ zplug load
 
 # anyframe
 bindkey '^r' anyframe-widget-put-history
+
+#exec fish and tmux
+[[ -z "$TMUX" ]] && exec tmux
