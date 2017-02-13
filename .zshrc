@@ -154,7 +154,7 @@ else
   source $HOME/.zplug/init.zsh
 fi
 
-zplug "zsh-users/zsh-syntax-highlighting", use:"zsh-syntax-highlighting.zsh", nice:10
+zplug "zsh-users/zsh-syntax-highlighting", use:"zsh-syntax-highlighting.zsh", defer:2
 zplug "zsh-users/zsh-completions"
 zplug "mollifier/anyframe"
 
