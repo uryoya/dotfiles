@@ -16,8 +16,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 [[ $PATH =~ $HOME/.go/bin ]] || export PATH=$HOME/.go/bin:$PATH
 
 # 色を使用出来るようにする
-autoload -Uz colors
-colors
+autoload -Uz colors && colors
 
 # vi 風キーバインドにする
 bindkey -v
@@ -27,6 +26,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+########################################
 # プロンプト
 #PROMPT="%(?.%F{210}%n@%m❯.%F{009}%n@%m❯) %f"
 PROMPT="%(?.%F{210}❯.%F{009}❯) %f"
@@ -36,6 +36,7 @@ RPROMPT="%F{078}❮ %~${vcs_info_msg_0_}"
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 
+# vcs_info の設定
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "[+]"
 zstyle ':vcs_info:git:*' unstagedstr "[?]"
@@ -50,8 +51,7 @@ add-zsh-hook precmd _update_vcs_info_msg
 
 
 # 単語の区切り文字を指定する
-autoload -Uz select-word-style
-select-word-style default
+autoload -Uz select-word-style && select-word-style default
 # ここで指定した文字は単語区切りとみなされる
 # / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
 zstyle ':zle:*' word-chars " /=;@:{},|"
@@ -60,8 +60,7 @@ zstyle ':zle:*' word-style unspecified
 ########################################
 # 補完
 # 補完機能を有効にする
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
