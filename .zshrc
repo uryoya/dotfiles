@@ -148,10 +148,10 @@ alias -g G='| grep'
 ########################################
 # zplug
 if [[ -d $HOME/.zplug ]]; then
-  source $HOME/.zplug/zplug
+  source $HOME/.zplug/init.zsh
 else
-  git clone https://github.com/b4b4r07/zplug ~/.zplug
-  source $HOME/.zplug/zplug
+  curl -sL zplug.sh/installer | zsh
+  source $HOME/.zplug/init.zsh
 fi
 
 zplug "zsh-users/zsh-syntax-highlighting", use:"zsh-syntax-highlighting.zsh", nice:10
