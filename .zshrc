@@ -10,7 +10,6 @@ export LANG=ja_JP.UTF-8
 export QT_IM_MODULE=fcitx
 export GOPATH=$HOME/.go
 export XDG_CONFIG_HOME=$HOME/.config
-#export PATH=$HOME/.go/bin:$PATH
 
 # PATHにない場合に追加
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
@@ -29,13 +28,6 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # プロンプト
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
-#PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-#%# "
-#PROMPT="%F{210}❯ %n%F{104}❯ %m%F{078}❯ %~
-#%{${fg[default]}%}%# "
 PROMPT="%F{210}%n@%F{210}%m❯%F{078}❯ %~❯%F{104}❯ 
 %{${fg[default]}%}%# "
 
@@ -132,6 +124,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
+alias ls='ls -F --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
 
@@ -144,10 +137,6 @@ alias mkdir='mkdir -p'
 alias gs='git status --short --branch'
 alias g='git'
 
-alias g++='g++ -std=c++11'
-
-#alias choregraphe='/opt/Aldebaran/Choregraphe\ Suite\ 2.4/bin/choregraphe_launcher'
-
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
@@ -155,36 +144,8 @@ alias sudo='sudo '
 alias -g L='| less'
 alias -g G='| grep'
 
-# C で標準出力をクリップボードにコピーする
-# mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
-if which pbcopy >/dev/null 2>&1 ; then
-    # Mac
-    alias -g C='| pbcopy'
-elif which xsel >/dev/null 2>&1 ; then
-    # Linux
-    alias -g C='| xsel --input --clipboard'
-elif which putclip >/dev/null 2>&1 ; then
-    # Cygwin
-    alias -g C='| putclip'
-fi
-
-
-
 ########################################
-# OS 別の設定
-case ${OSTYPE} in
-    darwin*)
-        #Mac用の設定
-        export CLICOLOR=1
-        alias ls='ls -G -F'
-        ;;
-    linux*)
-        #Linux用の設定
-        alias ls='ls -F --color=auto'
-        ;;
-esac
-
-
+# zplug
 if [[ -d $HOME/.zplug ]]; then
   source $HOME/.zplug/zplug
 else
@@ -210,5 +171,6 @@ zplug load
 # anyframe
 bindkey '^r' anyframe-widget-put-history
 
-#exec fish and tmux
+# exec tmux
 [[ -z "$TMUX" ]] && exec tmux
+
