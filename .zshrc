@@ -28,7 +28,8 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # プロンプト
-PROMPT="%(?.%F{210}%n@%m❯.%F{009}%n@%m❯) %f"
+#PROMPT="%(?.%F{210}%n@%m❯.%F{009}%n@%m❯) %f"
+PROMPT="%(?.%F{210}❯.%F{009}❯) %f"
 #PROMPT="%(?.%F{047}✓ .%F{009}✗ )%F{210}❯ %f"
 RPROMPT="%F{078}❮ %~${vcs_info_msg_0_}"
 # vcs_info
