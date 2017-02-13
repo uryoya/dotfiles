@@ -19,8 +19,8 @@ export XDG_CONFIG_HOME=$HOME/.config
 autoload -Uz colors
 colors
 
-# emacs 風キーバインドにする
-bindkey -e
+# vi 風キーバインドにする
+bindkey -v
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
