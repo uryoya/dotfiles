@@ -157,6 +157,7 @@ fi
 zplug "zsh-users/zsh-syntax-highlighting", use:"zsh-syntax-highlighting.zsh", defer:2
 zplug "zsh-users/zsh-completions"
 zplug "mollifier/anyframe"
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
