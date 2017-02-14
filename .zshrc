@@ -28,9 +28,7 @@ SAVEHIST=1000000
 
 ########################################
 # プロンプト
-#PROMPT="%(?.%F{210}%n@%m❯.%F{009}%n@%m❯) %f"
 PROMPT="%(?.%F{008}❯.%F{009}❯)%F{210}❯❯ %f"
-#PROMPT="%(?.%F{047}✓ .%F{009}✗ )%F{210}❯ %f"
 RPROMPT="%F{078}❮ %~${vcs_info_msg_0_}"
 # vcs_info
 autoload -Uz vcs_info
@@ -87,9 +85,6 @@ setopt no_beep
 # フローコントロールを無効にする
 setopt no_flow_control
 
-# Ctrl+Dでzshを終了しない
-setopt ignore_eof
-
 # '#' 以降をコメントとして扱う
 setopt interactive_comments
 
@@ -98,6 +93,7 @@ setopt auto_cd
 
 # cd したら自動的にpushdする
 setopt auto_pushd
+
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
 
