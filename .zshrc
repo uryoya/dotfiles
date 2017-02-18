@@ -28,8 +28,9 @@ SAVEHIST=1000000
 
 ########################################
 # プロンプト
-PROMPT="%(?.%F{008}❯.%F{009}❯)%F{210}❯❯ %f"
-RPROMPT="%F{078}❮ %~${vcs_info_msg_0_}"
+PROMPT="%F{210}%n❯%F{078}❯ %~❯
+%(?.%F{007}%#.%F{009}%#) %f"
+RPROMPT="${vcs_info_msg_0_}"
 # vcs_info
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
@@ -38,12 +39,12 @@ autoload -Uz add-zsh-hook
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "[+]"
 zstyle ':vcs_info:git:*' unstagedstr "[?]"
-zstyle ':vcs_info:*' formats '❮%F{104}❮ %b%c%u%f'
-zstyle ':vcs_info:*' actionformats '❮%F{009}❮ %b|%a%c%u%f'
+zstyle ':vcs_info:*' formats '%F{104}❮ %b%c%u%f'
+zstyle ':vcs_info:*' actionformats '%F{104}❮ %b%c%u❮%F{009}❮ %a%f'
 
 function _update_vcs_info_msg() {
     LANG=en_US.UTF-8 vcs_info
-    RPROMPT="%F{078}❮ %~${vcs_info_msg_0_}"
+    RPROMPT="${vcs_info_msg_0_}"
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
