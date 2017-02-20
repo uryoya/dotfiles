@@ -1,6 +1,8 @@
 " Neovim 
 
-"dein Scripts-----------------------------
+"-------------------------------------------------------------------------------
+" dein の設定
+"-------------------------------------------------------------------------------
 let s:dein_dir = expand('~/.config/nvim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if &runtimepath !~# '/dein.vim'
@@ -27,9 +29,10 @@ if dein#check_install()
   call dein#install()
 endif
 
-"End dein Scripts-------------------------
 
-" Vim Settings ---------------------------
+"-------------------------------------------------------------------------------
+" Vimの設定
+"-------------------------------------------------------------------------------
 let mapleader = "\<Space>"
 
 " 表示
@@ -43,24 +46,8 @@ set pumheight=10    " 補完メニューの高さ
 set colorcolumn=80  " 80文字目に線を入れる
 set ambiwidth=double    " emojiとかがいい感じに表示できる🍣🍣🍣
 set cursorline  " カーソルのある行がハイライトされる
-" カラースキーマ設定
-" hybird
-set background=dark
-colorscheme hybrid
-"highlight Normal ctermbg=none
-" molokai
-"let g:molokai_original = 1
-"colorscheme molokai
-" terminalだけ背景透過
-"autocmd TermOpen * call SukeSuke()
-"function SukeSuke()
-"    highlight Normal ctermbg=none
-"endfunction
-"autocmd TermOpen * <buffer> call :SukeSuke()
-
-"" 括弧入力時に、対応する括弧に一瞬飛ぶ
-"set showmatch
-"set matchtime=1
+set termguicolors   " True color
+colorscheme onedark
 
 " インデント
 set autoindent  " 自動インデント
@@ -80,7 +67,6 @@ set nowrapscan  " 最後の語句の次に最初の語句にループして検�
 set noswapfile  " スワップフィアルを作らない
 set wildmenu    " ファイル名補完の設定
 set backspace=indent,eol,start  " バックスペースで色々消せるようにする
-"set clipboard=unnamed,autoselect    " クリップボードの共有
 
 " nvim terminal
 let g:terminal_scrollback_buffer_size = 100000 
@@ -132,6 +118,7 @@ vmap <Leader>P "+P
 " ファイル操作
 nnoremap <silent><Leader>q :q<CR>
 nnoremap <silent><Leader>w :w<CR>
+nnoremap <silent><Leader>z :wq<CR>
 " ハイライト切り替え
 nnoremap <silent><Leader>h :noh<CR>
 " ターミナルから抜ける
@@ -145,22 +132,23 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+nnoremap <A->> <C-w>>
+nnoremap <A-<> <C-w><
+nnoremap <A-+> <C-w>+
+nnoremap <A--> <C-w>-
 
-" End Vim Settings -----------------------
 
-" Plugin Settings ------------------------
+"-------------------------------------------------------------------------------
+" プラグインの設定
+"-------------------------------------------------------------------------------
 " Lightline settings
 set laststatus=2
 let g:lightline = {
-    \'colorscheme':'wombat'
+    \'colorscheme':'onedark'
     \}
-" End
 
 " Unite.vim settings
 nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
-" End
 
 " NERDtree settigs
 nnoremap <silent><Leader>e :NERDTreeToggle<CR>
-" End
-" End ------------------------------------

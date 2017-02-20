@@ -10,35 +10,47 @@ export LANG=ja_JP.UTF-8
 export QT_IM_MODULE=fcitx
 export GOPATH=$HOME/.go
 export XDG_CONFIG_HOME=$HOME/.config
-#export PATH=$HOME/.go/bin:$PATH
 
 # PATHにない場合に追加
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
 [[ $PATH =~ $HOME/.go/bin ]] || export PATH=$HOME/.go/bin:$PATH
 
 # 色を使用出来るようにする
-autoload -Uz colors
-colors
+autoload -Uz colors && colors
 
-# emacs 風キーバインドにする
-bindkey -e
+# vi 風キーバインドにする
+bindkey -v
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+########################################
 # プロンプト
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-%# "
+PROMPT="%F{210}%n❯%F{078}❯ %~❯
+%(?.%F{007}%#.%F{009}%#) %f"
+RPROMPT="${vcs_info_msg_0_}"
+# vcs_info
+autoload -Uz vcs_info
+autoload -Uz add-zsh-hook
+
+# vcs_info の設定
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "[+]"
+zstyle ':vcs_info:git:*' unstagedstr "[?]"
+zstyle ':vcs_info:*' formats '%F{104}❮ %b%c%u%f'
+zstyle ':vcs_info:*' actionformats '%F{104}❮ %b%c%u❮%F{009}❮ %a%f'
+
+function _update_vcs_info_msg() {
+    LANG=en_US.UTF-8 vcs_info
+    RPROMPT="${vcs_info_msg_0_}"
+}
+add-zsh-hook precmd _update_vcs_info_msg
 
 
 # 単語の区切り文字を指定する
-autoload -Uz select-word-style
-select-word-style default
+autoload -Uz select-word-style && select-word-style default
 # ここで指定した文字は単語区切りとみなされる
 # / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
 zstyle ':zle:*' word-chars " /=;@:{},|"
@@ -47,8 +59,7 @@ zstyle ':zle:*' word-style unspecified
 ########################################
 # 補完
 # 補完機能を有効にする
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -65,21 +76,6 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 
 ########################################
-# vcs_info
-autoload -Uz vcs_info
-autoload -Uz add-zsh-hook
-
-zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
-zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
-
-function _update_vcs_info_msg() {
-    LANG=en_US.UTF-8 vcs_info
-    RPROMPT="${vcs_info_msg_0_}"
-}
-add-zsh-hook precmd _update_vcs_info_msg
-
-
-########################################
 # オプション
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
@@ -90,9 +86,6 @@ setopt no_beep
 # フローコントロールを無効にする
 setopt no_flow_control
 
-# Ctrl+Dでzshを終了しない
-setopt ignore_eof
-
 # '#' 以降をコメントとして扱う
 setopt interactive_comments
 
@@ -101,6 +94,7 @@ setopt auto_cd
 
 # cd したら自動的にpushdする
 setopt auto_pushd
+
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
 
@@ -128,6 +122,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
+alias ls='ls -F --color=auto'
 alias la='ls -a'
 alias ll='ls -l'
 
@@ -137,9 +132,8 @@ alias mv='mv -i'
 
 alias mkdir='mkdir -p'
 
-alias g++='g++ -std=c++11'
-
-#alias choregraphe='/opt/Aldebaran/Choregraphe\ Suite\ 2.4/bin/choregraphe_launcher'
+alias gs='git status --short --branch'
+alias g='git'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
@@ -148,46 +142,19 @@ alias sudo='sudo '
 alias -g L='| less'
 alias -g G='| grep'
 
-# C で標準出力をクリップボードにコピーする
-# mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
-if which pbcopy >/dev/null 2>&1 ; then
-    # Mac
-    alias -g C='| pbcopy'
-elif which xsel >/dev/null 2>&1 ; then
-    # Linux
-    alias -g C='| xsel --input --clipboard'
-elif which putclip >/dev/null 2>&1 ; then
-    # Cygwin
-    alias -g C='| putclip'
-fi
-
-
-
 ########################################
-# OS 別の設定
-case ${OSTYPE} in
-    darwin*)
-        #Mac用の設定
-        export CLICOLOR=1
-        alias ls='ls -G -F'
-        ;;
-    linux*)
-        #Linux用の設定
-        alias ls='ls -F --color=auto'
-        ;;
-esac
-
-
+# zplug
 if [[ -d $HOME/.zplug ]]; then
-  source $HOME/.zplug/zplug
+  source $HOME/.zplug/init.zsh
 else
-  git clone https://github.com/b4b4r07/zplug ~/.zplug
-  source $HOME/.zplug/zplug
+  curl -sL zplug.sh/installer | zsh
+  source $HOME/.zplug/init.zsh
 fi
 
-zplug "zsh-users/zsh-syntax-highlighting", use:"zsh-syntax-highlighting.zsh", nice:10
+zplug "zsh-users/zsh-syntax-highlighting", use:"zsh-syntax-highlighting.zsh", defer:2
 zplug "zsh-users/zsh-completions"
 zplug "mollifier/anyframe"
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
@@ -202,3 +169,7 @@ zplug load
 
 # anyframe
 bindkey '^r' anyframe-widget-put-history
+
+# exec tmux
+[[ -z "$TMUX" ]] && exec tmux
+
