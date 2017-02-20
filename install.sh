@@ -18,3 +18,5 @@ ln -sf $HOME/dotfiles/.vim $HOME/.vim
 ln -sf $HOME/dotfiles/nvim $HOME/.config/nvim
 ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 
+chsh -s $(which zsh) $USER
+
