@@ -101,8 +101,8 @@ nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
 " ; : 入れ替え
-nnoremap ; :
-nnoremap : ;
+"nnoremap ; :
+"nnoremap : ;
 " 行末までヤンク
 nnoremap Y y$
 " 数値の増減
