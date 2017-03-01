@@ -14,6 +14,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 # PATHにない場合に追加
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
 [[ $PATH =~ $HOME/.go/bin ]] || export PATH=$HOME/.go/bin:$PATH
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # 色を使用出来るようにする
 autoload -Uz colors && colors
