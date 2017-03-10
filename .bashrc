@@ -75,8 +75,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -91,9 +91,19 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias mkdir='mkdir -p'
+
+alias gs='git status --short --branch'
+alias g='git'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -115,14 +125,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 ### for fish
-source ~/.cargo/env
-export RUST_SRC_PATH="/home/uryoya/.multirust/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 export GOPATH=$HOME/.go
 [[ $PATH =~ $HOME/.go/bin ]] || export PATH=$HOME/.go/bin:$PATH
-#exec fish and tmux
-[[ -z "$TMUX" ]] && exec tmux
 
