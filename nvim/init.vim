@@ -49,6 +49,10 @@ set cursorline  " カーソルのある行がハイライトされる
 set termguicolors   " True color
 colorscheme onedark
 
+" 不可視文字の表示
+set list
+set listchars=tab:»-,space:.,trail:-,nbsp:%,eol:¬
+
 " インデント
 set autoindent  " 自動インデント
 set expandtab   " タブを半角スペースにする
