@@ -33,3 +33,6 @@ repo = 'rust-lang/rust.vim'
 repo = 'lepture/vim-jinja'
 [[plugins]]
 repo = 'vim-ruby/vim-ruby'
+[[plugins]]
+repo = 'dag/vim-fish'
+
