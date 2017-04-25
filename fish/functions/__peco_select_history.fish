@@ -1,5 +1,5 @@
 function __peco_select_history
-    history | peco | read selected
+    history | sort | uniq | peco | read selected
     if [ $selected ]
         commandline $selected
         commandline -f repaint
