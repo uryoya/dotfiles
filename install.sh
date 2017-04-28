@@ -2,7 +2,15 @@
 
 # ツールのインストール
 sudo apt update && sudo apt upgrade -y
-sudo apt install zsh vim
+sudo apt install git vim
+
+# git
+git config --global user.email "urano.works.mail@gmail.com"
+git config --global user.name "URANO Ryoya"
+
+# python
+sudo apt install python3-venv
+
 # for neovim
 sudo apt install rsync xsel python-pip python3-pip
 sudo pip install --upgrade pip && sudo pip3 install --upgrade pip
