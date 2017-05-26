@@ -11,6 +11,10 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 
+# Edit tools
+[[plugins]]
+repo = 'tyru/caw.vim'
+
 
 # File import utils
 [[plugins]]
