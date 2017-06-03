@@ -12,6 +12,8 @@ repo = 'scrooloose/nerdtree'
 repo = 'Xuyuanp/nerdtree-git-plugin'
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
 
 # Edit tools
 [[plugins]]
