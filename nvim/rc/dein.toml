@@ -10,6 +10,8 @@ repo = 'itchyny/lightline.vim'
 repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
 
 # Edit tools
 [[plugins]]

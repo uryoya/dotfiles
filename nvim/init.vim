@@ -156,3 +156,11 @@ nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
 
 " NERDtree settigs
 nnoremap <silent><Leader>e :NERDTreeToggle<CR>
+
+" vim-indent-guides
+" Vim起動時に有効化
+let g:indent_guides_enable_on_vim_startup = 1
+" インデントを表示しないファイル
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+" 可視化領域のサイズ
+let g:indent_guides_guide_size = 1
