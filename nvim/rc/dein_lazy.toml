@@ -18,3 +18,14 @@ on_ft = ['python', 'python3', 'htmldjango']
 hook_add = '''
     let g:deoplete#sources#jedi#statement_length = 0
 '''
+[[plugins]]
+repo = 'zchee/deoplete-go'
+build = 'make'
+on_ft = ['go']
+[[plugins]]
+repo = 'sebastianmarkow/deoplete-rust'
+on_ft = ['rust']
+hook_add = '''
+    let g:deoplete#sources#rust#racer_binary = '~/.cargo/bin/racer'
+    let g:deoplete#sources#rust#rust_source_path = '~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src'
+'''

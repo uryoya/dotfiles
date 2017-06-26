@@ -47,6 +47,7 @@ set colorcolumn=80  " 80文字目に線を入れる
 set ambiwidth=double    " emojiとかがいい感じに表示できる🍣🍣🍣
 set cursorline  " カーソルのある行がハイライトされる
 set termguicolors   " True color
+set hidden      " 保存しなくてもバッファを切り替えることができる
 colorscheme onedark
 
 " 不可視文字の表示
