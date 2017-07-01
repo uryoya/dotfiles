@@ -32,6 +32,9 @@ repo = 'joshdick/onedark.vim'
 [[plugins]]
 repo = 'hynek/vim-python-pep8-indent'
 
+[[plugins]]
+repo = "dgryski/vim-godef"
+
 # syntax highlight
 [[plugins]]
 repo = 'cespare/vim-toml'
