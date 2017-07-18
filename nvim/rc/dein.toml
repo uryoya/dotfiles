@@ -18,6 +18,8 @@ repo = 'airblade/vim-gitgutter'
 # Edit tools
 [[plugins]]
 repo = 'tyru/caw.vim'
+[[plugins]]
+repo = 'cohama/lexima.vim'
 
 
 # File import utils
