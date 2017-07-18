@@ -162,6 +162,6 @@ nnoremap <silent><Leader>e :NERDTreeToggle<CR>
 " Vim起動時に有効化
 let g:indent_guides_enable_on_vim_startup = 1
 " インデントを表示しないファイル
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'go', 'html', 'php']
 " 可視化領域のサイズ
 let g:indent_guides_guide_size = 1
