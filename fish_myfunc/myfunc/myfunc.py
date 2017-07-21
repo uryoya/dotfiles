@@ -39,10 +39,11 @@ def main():
         MY_FUNCS_DIR = load_config()
     except Exception as err:
         print(err, file=sys.stderr)
+        exit(1)
 
     MY_FUNCS_DIR = BASE_DIR / MY_FUNCS_DIR
     if not MY_FUNCS_DIR.is_dir():
-        print(f'{MY_FUNCS_DIR}: そのようなディレクトリは見つかりません')
+        print('%s: そのようなディレクトリは見つかりません' % MY_FUNCS_DIR)
 
     if not FISH_FUNCS_DIR.is_dir(): # ディレクトリがない場合は強制的に作る
         FISH_FUNCS_DIR.mkdir(parents=True)
@@ -82,10 +83,10 @@ def load_config():
     CONFIG_FILE = BASE_DIR / 'fish-myfunc.conf'
     cnf = configparser.ConfigParser()
     if CONFIG_FILE.is_file():
-        cnf.read(CONFIG_FILE)
+        cnf.read(str(CONFIG_FILE))
         return cnf['myfunc']['myfunc_dir']
     else:
-        raise Exception(f'{CONFIG_FILE} 設定ファイルを作成してください')
+        raise Exception('%s 設定ファイルを作成してください' % CONFIG_FILE)
 
 
 def load_functions(path):
