@@ -13,11 +13,9 @@ sudo apt install python3-venv -y
 
 # for neovim
 sudo apt install rsync xsel python-pip python3-pip -y
-sudo pip install --upgrade pip -y && sudo pip3 install --upgrade pip -y
-sudo pip install neovim -y && sudo pip3 install neovim jedi -y
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
 sudo apt-get install neovim -y
+sudo pip install --upgrade pip && sudo pip3 install --upgrade pip
+sudo pip install neovim && sudo pip3 install neovim jedi
 
 ln -sf $HOME/dotfiles/.vimrc $HOME/.vimrc
 # ln -sf $HOME/dotfiles/.gvimrc $HOME/.gvimrc
