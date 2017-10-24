@@ -1,36 +1,6 @@
 " Neovim 
 
 "-------------------------------------------------------------------------------
-" dein の設定
-"-------------------------------------------------------------------------------
-let s:dein_dir = expand('~/.config/nvim/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-if &runtimepath !~# '/dein.vim'
-    if !isdirectory(s:dein_repo_dir)
-        execute '!git clone https://github.com/Shougo/dein.vim.git' s:dein_repo_dir
-    endif
-    execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
-
-let s:toml = expand('~/.config/nvim/rc/dein.toml')
-let s:toml_lazy = expand('~/.config/nvim/rc/dein_lazy.toml')
-if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
-    call dein#load_toml(s:toml, {'lazy': 0})
-    call dein#load_toml(s:toml_lazy, {'lazy': 1})
-    call dein#end()
-    call dein#save_state()
-endif
-
-filetype plugin indent on
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
-
-"-------------------------------------------------------------------------------
 " Vimの設定
 "-------------------------------------------------------------------------------
 let mapleader = "\<Space>"
@@ -48,7 +18,7 @@ set ambiwidth=double    " emojiとかがいい感じに表示できる🍣🍣�
 set cursorline  " カーソルのある行がハイライトされる
 set termguicolors   " True color
 set hidden      " 保存しなくてもバッファを切り替えることができる
-colorscheme onedark
+colorscheme default
 
 " 不可視文字の表示
 set list
@@ -165,3 +135,9 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'go', 'html', 'php']
 " 可視化領域のサイズ
 let g:indent_guides_guide_size = 1
+
+"-------------------------------------------------------------------------------
+" 最後に設定したほうがいい系の設定
+"-------------------------------------------------------------------------------
+filetype plugin indent on
+
