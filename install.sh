@@ -9,15 +9,13 @@ git config --global user.email "urano.works.mail@gmail.com"
 git config --global user.name "URANO Ryoya"
 
 # python
-sudo apt install python3-venv
+sudo apt install python3-venv -y
 
 # for neovim
-sudo apt install rsync xsel python-pip python3-pip curl
+sudo apt install rsync xsel python-pip python3-pip curl -y
+sudo apt-get install neovim -y
 sudo pip install --upgrade pip && sudo pip3 install --upgrade pip
 sudo pip install neovim && sudo pip3 install neovim jedi
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update
-sudo apt-get install neovim
 
 curl "https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim" \
     --create-dirs -o $HOME/.vim/colors/solarized.vim
