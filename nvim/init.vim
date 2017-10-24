@@ -1,4 +1,19 @@
-" Neovim 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"             /|\        |
+"            /N|e\       |\
+"           /NN|ee\      |o\    Author:  URANO Ryoya
+"           |NN|\ee\     |oo|   License: MIT
+"           |NN| \ee\    |oo|
+"           |NN|  \ee\   |oo|                III
+"           |NN|   \ee\  |oo|   VV       VV        MMM   MMM
+"           |NN|    \ee\ |oo|    VV     VV   III   MM MM MM MM
+"           |NN|     \ee\|oo|     VV   VV     II   MM   MMM   MM
+"           \NN|      \ee|o/       VV VV      II   MM    MM    MM
+"            \N|       \e|/         VVV       II   MM    MM    MM
+"             \|        \_    init.  V        III  MM    MM    MM
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 "-------------------------------------------------------------------------------
 " Vimの設定
