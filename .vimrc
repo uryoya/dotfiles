@@ -35,7 +35,9 @@ set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 " カラースキーマ設定
 set t_Co=256
-colorscheme default
+let g:solarized_termtrans=1
+set background=dark
+colorscheme solarized
 " don't create swapfiles
 set noswapfile
 " helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/

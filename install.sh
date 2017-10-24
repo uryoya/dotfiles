@@ -12,12 +12,15 @@ git config --global user.name "URANO Ryoya"
 sudo apt install python3-venv
 
 # for neovim
-sudo apt install rsync xsel python-pip python3-pip
+sudo apt install rsync xsel python-pip python3-pip curl
 sudo pip install --upgrade pip && sudo pip3 install --upgrade pip
 sudo pip install neovim && sudo pip3 install neovim jedi
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
 sudo apt-get install neovim
+
+curl "https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim" \
+    --create-dirs -o $HOME/.vim/colors/solarized.vim
 
 ln -sf $HOME/dotfiles/.vimrc $HOME/.vimrc
 # ln -sf $HOME/dotfiles/.gvimrc $HOME/.gvimrc
