@@ -50,10 +50,29 @@ Plug 'dag/vim-fish', {'for': 'fish'}                    " ハイライト
 call plug#end()
 
 "------------------------------------------------------------------------------
+" プラグインの設定
+"------------------------------------------------------------------------------
+" solarized color toggle
+call togglebg#map("<F5>")
+
+" Lightline settings
+set laststatus=2
+let g:lightline = {'colorscheme':'solarized'}
+
+" NERDtree settigs
+nnoremap <silent><Leader>e :NERDTreeToggle<CR>
+
+" vim-indent-guides
+" Vim起動時に有効化
+let g:indent_guides_enable_on_vim_startup = 1
+" インデントを表示しないファイル
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'go', 'html', 'php']
+" 可視化領域のサイズ
+let g:indent_guides_guide_size = 1
+
+"------------------------------------------------------------------------------
 " Vimの設定
 "------------------------------------------------------------------------------
-let mapleader = "\<Space>"
-
 " 表示
 syntax on       " シンタックスハイライトをする
 "set termguicolors " enable true color
@@ -96,16 +115,19 @@ set backspace=indent,eol,start  " バックスペースで色々消せるよう�
 
 " nvim terminal
 let g:terminal_scrollback_buffer_size = 100000
-
-" helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/
-nnoremap <Leader>t :<C-u>tab help<Space>
-nnoremap <Leader>v :<C-u>vertical belowright help<Space>
-
 " Neovim config
 if has('unix')
     let g:python_host_prog = '/usr/bin/python2'
     let g:python3_host_prog = '/usr/bin/python3'
 endif
+
+"------------------------------------------------------------------------------
+" キーマップ
+"------------------------------------------------------------------------------
+let mapleader = "\<Space>"
+" helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/
+nnoremap <Leader>t :<C-u>tab help<Space>
+nnoremap <Leader>v :<C-u>vertical belowright help<Space>
 
 " MoveToNewTab
 nnoremap <silent> tm :<C-u>call <SID>MoveToNewTab()<CR>
@@ -162,30 +184,6 @@ nnoremap <A->> <C-w>>
 nnoremap <A-<> <C-w><
 nnoremap <A-+> <C-w>+
 nnoremap <A--> <C-w>-
-
-
-"------------------------------------------------------------------------------
-" プラグインの設定
-"------------------------------------------------------------------------------
-" solarized color toggle
-call togglebg#map("<F5>")
-
-" Lightline settings
-set laststatus=2
-let g:lightline = {
-    \'colorscheme':'solarized'
-    \}
-
-" NERDtree settigs
-nnoremap <silent><Leader>e :NERDTreeToggle<CR>
-
-" vim-indent-guides
-" Vim起動時に有効化
-let g:indent_guides_enable_on_vim_startup = 1
-" インデントを表示しないファイル
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'go', 'html', 'php']
-" 可視化領域のサイズ
-let g:indent_guides_guide_size = 1
 
 "------------------------------------------------------------------------------
 " 最後に設定したほうがいい系の設定
