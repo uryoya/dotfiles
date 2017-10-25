@@ -31,15 +31,18 @@ Plug 'Shougo/denite.nvim'                       " 闇のファイラ
 Plug 'tyru/caw.vim'                             " コメントアウト
 Plug 'cohama/lexima.vim'                        " 括弧の自動挿入
 Plug 'editorconfig/editorconfig-vim'            " EditorConfig
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " プログラミング言語設定
 " [Python]
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}  " PEP8インデント
-Plug 'lepture/vim-jinja'                                " Jinja
+Plug 'lepture/vim-jinja', {'for': 'python'}             " Jinja
+Plug 'zchee/deoplete-jedi', {'for': 'python'}           " 補完
 
 " [Rust]
 Plug 'rust-lang/rust.vim', {'for': 'rust'}              " ハイライト
 Plug 'racer-rust/vim-racer', {'for': 'rust'}            " 補完
+au! User vim-racer call RacerSetting()
 
 " [Toml]
 Plug 'cespare/vim-toml', {'for': 'toml'}                " ハイライト
@@ -59,16 +62,26 @@ call togglebg#map("<F5>")
 set laststatus=2
 let g:lightline = {'colorscheme':'solarized'}
 
-" NERDtree settigs
-nnoremap <silent><Leader>e :NERDTreeToggle<CR>
-
 " vim-indent-guides
-" Vim起動時に有効化
 let g:indent_guides_enable_on_vim_startup = 1
-" インデントを表示しないファイル
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'go', 'html', 'php']
-" 可視化領域のサイズ
 let g:indent_guides_guide_size = 1
+
+" rust-racer
+function RacerSetting()
+    " Racerの設定はこっちを見る: https://github.com/racer-rust/racer
+    set hidden
+    let g:racer_cmd = $HOME . "/.cargo/bin/racer"
+    let g:racer_experimental_completer = 1 " 関数の詳細
+endfunction
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
 
 "------------------------------------------------------------------------------
 " Vimの設定
@@ -86,7 +99,7 @@ set ambiwidth=double    " emojiとかがいい感じに表示できる🍣🍣�
 set cursorline  " カーソルのある行がハイライトされる
 "set termguicolors   " True color (solarizedが正しく表示されないので外した)
 set hidden      " 保存しなくてもバッファを切り替えることができる
-let g:solarized_termtrans = 1 " 背景透過
+let g:solarized_termtrans = 0 " 背景透過
 set background=dark
 colorscheme solarized
 
