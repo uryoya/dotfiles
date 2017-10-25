@@ -41,8 +41,8 @@ Plug 'zchee/deoplete-jedi', {'for': 'python'}           " 補完
 
 " [Rust]
 Plug 'rust-lang/rust.vim', {'for': 'rust'}              " ハイライト
-Plug 'racer-rust/vim-racer', {'for': 'rust'}            " 補完
-au! User vim-racer call RacerSetting()
+Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}   " 補完
+au! User deoplete-rust call DeopleteRustSetting()
 
 " [Golang]
 Plug 'fatih/vim-go', {'for': 'go'}
@@ -72,18 +72,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'go', 'html', 'php']
 let g:indent_guides_guide_size = 1
 
-" rust-racer
-function RacerSetting()
-    " Racerの設定はこっちを見る: https://github.com/racer-rust/racer
-    set hidden
-    let g:racer_cmd = $HOME . "/.cargo/bin/racer"
-    let g:racer_experimental_completer = 1 " 関数の詳細
-endfunction
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <leader>gd <Plug>(rust-doc)
-
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 0
@@ -92,6 +80,12 @@ let g:deoplete#auto_complete_delay = 0
 function DeopleteGoSetting()
     let g:deoplete#sources#go#gocode_binary = $HOME.'/go/bin/gocode'
     let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+endfunction
+
+" deoplete-rust
+function DeopleteRustSetting()
+    let g:deoplete#sources#rust#racer_binary = $HOME.'/.cargo/bin/racer'
+    let g:deoplete#sources#rust#rust_source_path = $HOME.'/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 endfunction
 
 "------------------------------------------------------------------------------
