@@ -5,8 +5,8 @@
 "           |NN|\ee\     |oo|   License: MIT
 "           |NN| \ee\    |oo|
 "           |NN|  \ee\   |oo|                III
-"           |NN|   \ee\  |oo|   VV       VV        MMM   MMM
-"           |NN|    \ee\ |oo|    VV     VV   III   MM MM MM MM
+"           |NN|   \ee\  |oo|   VV       VV
+"           |NN|    \ee\ |oo|    VV     VV   III   MMMMM MMMMM
 "           |NN|     \ee\|oo|     VV   VV     II   MM   MMM   MM
 "           \NN|      \ee|o/       VV VV      II   MM    MM    MM
 "            \N|       \e|/         VVV       II   MM    MM    MM
@@ -14,6 +14,21 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"-------------------------------------------------------------------------------
+" プラグインの導入(Vim Plug)
+"-------------------------------------------------------------------------------
+call plug#begin('~/.config/nvim/plugged')
+
+" 表示
+Plug 'altercation/vim-colors-solarized'         " カラースキーム
+Plug 'itchyny/lightline.vim'                    " ステータスバー
+Plug 'nathanaelkane/vim-indent-guides'          " インデントの可視化
+
+" ツール
+Plug 'bronson/vim-trailing-whitespace'          " 末尾空白文字の削除
+Plug 'Shougo/denite.nvim'                       " 闇のファイラ
+
+call plug#end()
 
 "-------------------------------------------------------------------------------
 " Vimの設定
@@ -31,13 +46,15 @@ set pumheight=10    " 補完メニューの高さ
 set colorcolumn=80  " 80文字目に線を入れる
 set ambiwidth=double    " emojiとかがいい感じに表示できる🍣🍣🍣
 set cursorline  " カーソルのある行がハイライトされる
-set termguicolors   " True color
+"set termguicolors   " True color (solarizedが正しく表示されないので外した)
 set hidden      " 保存しなくてもバッファを切り替えることができる
-colorscheme default
+let g:solarized_termtrans = 1 " 背景透過
+set background=dark
+colorscheme solarized
 
 " 不可視文字の表示
 set list
-set listchars=tab:»-,space:.,trail:-,nbsp:%,eol:¬
+set listchars=tab:»-,trail:-,nbsp:%,eol:¬
 
 " インデント
 set autoindent  " 自動インデント
@@ -48,7 +65,7 @@ set shiftwidth=4    " 自動インデント時の空白
 set softtabstop=4   " タブキーを押した時の空白
 
 " 検索
-set hlsearch    " 検索結果ハイライト 
+set hlsearch    " 検索結果ハイライト
 set ignorecase  " 大文字小文字を無視
 set smartcase   " 検索に大文字を入れた場合大文字小文字を区別
 set nowrapscan  " 最後の語句の次に最初の語句にループして検索しない
@@ -59,7 +76,7 @@ set wildmenu    " ファイル名補完の設定
 set backspace=indent,eol,start  " バックスペースで色々消せるようにする
 
 " nvim terminal
-let g:terminal_scrollback_buffer_size = 100000 
+let g:terminal_scrollback_buffer_size = 100000
 
 " helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/
 nnoremap <Leader>t :<C-u>tab help<Space>
@@ -131,14 +148,14 @@ nnoremap <A--> <C-w>-
 "-------------------------------------------------------------------------------
 " プラグインの設定
 "-------------------------------------------------------------------------------
+" solarized color toggle
+call togglebg#map("<F5>")
+
 " Lightline settings
 set laststatus=2
 let g:lightline = {
-    \'colorscheme':'onedark'
+    \'colorscheme':'solarized'
     \}
-
-" Unite.vim settings
-nnoremap <leader>f :<C-u>Unite -start-insert file<CR>
 
 " NERDtree settigs
 nnoremap <silent><Leader>e :NERDTreeToggle<CR>
