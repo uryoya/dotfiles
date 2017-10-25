@@ -23,10 +23,29 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'altercation/vim-colors-solarized'         " カラースキーム
 Plug 'itchyny/lightline.vim'                    " ステータスバー
 Plug 'nathanaelkane/vim-indent-guides'          " インデントの可視化
+Plug 'airblade/vim-gitgutter'                   " Gitの状態表示
 
 " ツール
 Plug 'bronson/vim-trailing-whitespace'          " 末尾空白文字の削除
 Plug 'Shougo/denite.nvim'                       " 闇のファイラ
+Plug 'tyru/caw.vim'                             " コメントアウト
+Plug 'cohama/lexima.vim'                        " 括弧の自動挿入
+Plug 'editorconfig/editorconfig-vim'            " EditorConfig
+
+" プログラミング言語設定
+" [Python]
+Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}  " PEP8インデント
+Plug 'lepture/vim-jinja'                                " Jinja
+
+" [Rust]
+Plug 'rust-lang/rust.vim', {'for': 'rust'}              " ハイライト
+Plug 'racer-rust/vim-racer', {'for': 'rust'}            " 補完
+
+" [Toml]
+Plug 'cespare/vim-toml', {'for': 'toml'}                " ハイライト
+
+" [Fish Shell]
+Plug 'dag/vim-fish', {'for': 'fish'}                    " ハイライト
 
 call plug#end()
 
