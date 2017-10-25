@@ -60,6 +60,7 @@ call plug#end()
 "------------------------------------------------------------------------------
 " プラグインの設定
 "------------------------------------------------------------------------------
+let mapleader = "\<Space>"
 " solarized color toggle
 call togglebg#map("<F5>")
 
@@ -71,6 +72,20 @@ let g:lightline = {'colorscheme':'solarized'}
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'go', 'html', 'php']
 let g:indent_guides_guide_size = 1
+
+" denite
+call denite#custom#source(
+    \ 'file_rec', 'matchers', ['matcher_fuzzy', 'matcher_ignore_globs'])
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+    \ [ '.git/', '__pycache__/', 'venv/'])
+call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+nmap <silent> <Leader>f :<C-u>Denite file_rec -default-action=vsplit<CR>
+nmap <silent> <Leader>b :<C-u>Denite buffer<CR>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -142,7 +157,6 @@ endif
 "------------------------------------------------------------------------------
 " キーマップ
 "------------------------------------------------------------------------------
-let mapleader = "\<Space>"
 " helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/
 nnoremap <Leader>t :<C-u>tab help<Space>
 nnoremap <Leader>v :<C-u>vertical belowright help<Space>
