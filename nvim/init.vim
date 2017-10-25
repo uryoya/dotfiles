@@ -44,6 +44,11 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}              " ハイライト
 Plug 'racer-rust/vim-racer', {'for': 'rust'}            " 補完
 au! User vim-racer call RacerSetting()
 
+" [Golang]
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'zchee/deoplete-go', {'for': 'go', 'do': 'make'}
+au! User deoplete-go call DeopleteGoSetting()
+
 " [Toml]
 Plug 'cespare/vim-toml', {'for': 'toml'}                " ハイライト
 
@@ -82,6 +87,12 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 0
+
+" deoplete-go
+function DeopleteGoSetting()
+    let g:deoplete#sources#go#gocode_binary = $HOME.'/go/bin/gocode'
+    let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+endfunction
 
 "------------------------------------------------------------------------------
 " Vimの設定
