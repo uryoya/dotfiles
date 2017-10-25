@@ -1,4 +1,6 @@
 .vim/dein/
 .vim/colors
 nvim/dein/
+nvim/autoload/
+nvim/plugged/
 *~
