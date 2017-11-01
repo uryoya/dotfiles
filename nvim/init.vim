@@ -32,6 +32,7 @@ Plug 'tyru/caw.vim'                             " コメントアウト
 Plug 'cohama/lexima.vim'                        " 括弧の自動挿入
 Plug 'editorconfig/editorconfig-vim'            " EditorConfig
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'scrooloose/nerdtree', {'do': ':NERDTreeToggle'}
 
 " プログラミング言語設定
 " [Python]
@@ -86,6 +87,9 @@ call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 nmap <silent> <Leader>f :<C-u>Denite file_rec -default-action=vsplit<CR>
 nmap <silent> <Leader>b :<C-u>Denite buffer<CR>
+
+" NERDTree
+nmap <silent> <Leader>e :<C-u>NERDTreeToggle<CR>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
