@@ -123,7 +123,7 @@ set ambiwidth=double    " emojiとかがいい感じに表示できる🍣🍣�
 set cursorline  " カーソルのある行がハイライトされる
 "set termguicolors   " True color (solarizedが正しく表示されないので外した)
 set hidden      " 保存しなくてもバッファを切り替えることができる
-let g:solarized_termtrans = 0 " 背景透過
+let g:solarized_termtrans = 1 " 背景透過
 set background=dark
 colorscheme solarized
 
