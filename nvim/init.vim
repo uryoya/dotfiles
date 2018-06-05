@@ -149,6 +149,7 @@ set nowrapscan  " 最後の語句の次に最初の語句にループして検�
 set noswapfile  " スワップフィアルを作らない
 set wildmenu    " ファイル名補完の設定
 set backspace=indent,eol,start  " バックスペースで色々消せるようにする
+set mouse=a
 
 " nvim terminal
 let g:terminal_scrollback_buffer_size = 100000
