@@ -1,14 +1,11 @@
 #! /bin/bash
 
-# Git configの設定
-git config --global user.email "urano.works.mail@gmail.com"
-git config --global user.name "URANO Ryoya"
-
 # Symlinkを貼って各設定ファイルを有効化
 ln -sf $HOME/dotfiles/.vimrc $HOME/.vimrc
 ln -sf $HOME/dotfiles/.vim $HOME/.vim
 ln -sf $HOME/dotfiles/nvim $HOME/.config/nvim
 ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -sf $HOME/dotfiles/.gitconfig $HOME/.gitconfig
 
 # Neovim用に使うプラグインマネージャ
 curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
