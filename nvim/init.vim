@@ -151,6 +151,8 @@ set wildmenu    " ファイル名補完の設定
 set backspace=indent,eol,start  " バックスペースで色々消せるようにする
 set mouse=a
 
+autocmd BufRead,BufNewFile *.sc setfiletype scala
+
 " nvim terminal
 let g:terminal_scrollback_buffer_size = 100000
 " Neovim config
