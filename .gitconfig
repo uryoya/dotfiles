@@ -6,5 +6,5 @@
 [color]
 	ui = true
 [ghq]
-	root = /home/uryoya/Repositories/
-	root = /home/uryoya/go/src/
+	root = ~/Repositories/
+	root = ~/go/src/
