@@ -155,11 +155,6 @@ autocmd BufRead,BufNewFile *.sc setfiletype scala
 
 " nvim terminal
 let g:terminal_scrollback_buffer_size = 100000
-" Neovim config
-if has('unix')
-    let g:python_host_prog = '/usr/bin/python2'
-    let g:python3_host_prog = '/usr/bin/python3'
-endif
 
 "------------------------------------------------------------------------------
 " キーマップ
