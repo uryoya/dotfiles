@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " 表示
 Plug 'altercation/vim-colors-solarized'         " カラースキーム
+Plug 'sickill/vim-monokai'
 Plug 'itchyny/lightline.vim'                    " ステータスバー
 Plug 'nathanaelkane/vim-indent-guides'          " インデントの可視化
 Plug 'airblade/vim-gitgutter'                   " Gitの状態表示
@@ -67,7 +68,7 @@ call togglebg#map("<F5>")
 
 " Lightline settings
 set laststatus=2
-let g:lightline = {'colorscheme':'solarized'}
+let g:lightline = {'colorscheme':'wombat'}
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
@@ -121,11 +122,14 @@ set pumheight=10    " 補完メニューの高さ
 set colorcolumn=80  " 80文字目に線を入れる
 set ambiwidth=double    " emojiとかがいい感じに表示できる🍣🍣🍣
 set cursorline  " カーソルのある行がハイライトされる
-"set termguicolors   " True color (solarizedが正しく表示されないので外した)
 set hidden      " 保存しなくてもバッファを切り替えることができる
-let g:solarized_termtrans = 1 " 背景透過
-set background=dark
-colorscheme solarized
+
+" カラースキーム
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight VertSplit ctermbg=none
+autocmd ColorScheme * highlight Pmenu ctermbg=none
+autocmd ColorScheme * highlight NonText ctermbg=none
+colorscheme monokai
 
 " 不可視文字の表示
 set list
