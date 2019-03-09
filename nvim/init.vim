@@ -129,6 +129,7 @@ autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight VertSplit ctermbg=none
 autocmd ColorScheme * highlight Pmenu ctermbg=none
 autocmd ColorScheme * highlight NonText ctermbg=none
+autocmd ColorScheme * highlight Comment	ctermfg=246	cterm=none	guifg=#9c998e gui=none
 colorscheme monokai
 
 " 不可視文字の表示
