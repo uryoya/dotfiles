@@ -134,7 +134,7 @@ colorscheme monokai
 
 " 不可視文字の表示
 set list
-set listchars=tab:»-,trail:-,nbsp:%,eol:¬
+set listchars=tab:»-,trail:›,nbsp:%,eol:¬
 
 " インデント
 set autoindent  " 自動インデント
