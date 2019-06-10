@@ -1,7 +1,7 @@
-setl shiftwidth=4
-setl softtabstop=4
+setl shiftwidth=2
+setl softtabstop=2
 setl expandtab
-setl tabstop=4
+setl tabstop=2
 setl smarttab
 setl completeopt-=preview
 
