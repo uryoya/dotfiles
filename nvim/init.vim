@@ -57,6 +57,9 @@ Plug 'cespare/vim-toml', {'for': 'toml'}                " ハイライト
 " [Fish Shell]
 Plug 'dag/vim-fish', {'for': 'fish'}                    " ハイライト
 
+" [Elm]
+Plug 'elmcast/elm-vim'
+
 call plug#end()
 
 "------------------------------------------------------------------------------
