@@ -1,10 +1,14 @@
 [core]
-	editor = vim
+    editor = vim
 [user]
-	email = urano.works.mail@gmail.com
-	name = URANO Ryoya
+    email = urano.works.mail@gmail.com
+    name = URANO Ryoya
 [color]
-	ui = true
+    ui = true
 [ghq]
-	root = ~/Repositories/
-	root = ~/go/src/
+    root = ~/Repositories/
+    root = ~/go/src/
+[alias]
+    # https://mattn.kaoriya.net/software/git/20140708105946.htm
+    # TODO: このままだとCloseしてるブランチも持ってくるっぽいのでどうにかしたい
+    pr-setup =  "config --add remote.upstream.fetch +refs/pull/*/head:refs/remotes/upstream/pr/*"
