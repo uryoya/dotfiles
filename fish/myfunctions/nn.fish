@@ -1,3 +1,3 @@
 function nn
-    nvim (find -type f | grep -v .git/ | fzf)
+    nvim (find . -type f | grep -v .git/ | fzf)
 end
