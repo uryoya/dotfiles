@@ -13,5 +13,6 @@
     # TODO: このままだとCloseしてるブランチも持ってくるっぽいのでどうにかしたい
     pr-setup =  "config --add remote.upstream.fetch +refs/pull/*/head:refs/remotes/upstream/pr/*"
 
-    b = "branch"
-    ba = "branch -a"
+    br = "branch"
+    bra = "branch -a"
+    co = "checkout"
