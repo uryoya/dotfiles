@@ -64,6 +64,9 @@ Plug 'elmcast/elm-vim'
 " [Scala]
 Plug 'derekwyatt/vim-scala'
 
+" [TypeScript]
+Plug 'leafgarland/typescript-vim'
+
 call plug#end()
 
 "------------------------------------------------------------------------------
