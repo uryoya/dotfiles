@@ -22,6 +22,8 @@ call plug#begin('~/.config/nvim/plugged')
 " 表示
 Plug 'altercation/vim-colors-solarized'         " カラースキーム
 Plug 'sickill/vim-monokai'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'kaicataldo/material.vim'
 Plug 'itchyny/lightline.vim'                    " ステータスバー
 Plug 'nathanaelkane/vim-indent-guides'          " インデントの可視化
 Plug 'airblade/vim-gitgutter'                   " Gitの状態表示
@@ -73,12 +75,10 @@ call plug#end()
 " プラグインの設定
 "------------------------------------------------------------------------------
 let mapleader = "\<Space>"
-" solarized color toggle
-call togglebg#map("<F5>")
 
 " Lightline settings
 set laststatus=2
-let g:lightline = {'colorscheme':'wombat'}
+let g:lightline = {'colorscheme':'material'}
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
@@ -135,12 +135,33 @@ set cursorline  " カーソルのある行がハイライトされる
 set hidden      " 保存しなくてもバッファを切り替えることができる
 
 " カラースキーム
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight VertSplit ctermbg=none
-autocmd ColorScheme * highlight Pmenu ctermbg=none
-autocmd ColorScheme * highlight NonText ctermbg=none
-autocmd ColorScheme * highlight Comment	ctermfg=246	cterm=none	guifg=#9c998e gui=none
-colorscheme monokai
+" For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
+if (has('nvim'))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+endif
+
+" For Neovim > 0.1.5 and Vim > patch 7.4.1799 - https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162
+" Based on Vim patch 7.4.1770 (`guicolors` option) - https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd
+" https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
+if (has('termguicolors'))
+  set termguicolors
+endif
+
+" autocmd ColorScheme * highlight Normal ctermbg=none
+" autocmd ColorScheme * highlight VertSplit ctermbg=none
+" autocmd ColorScheme * highlight Pmenu ctermbg=none
+" autocmd ColorScheme * highlight NonText ctermbg=none
+" コードコメントのハイライトを明るく
+autocmd ColorScheme * highlight Comment	ctermfg=246	cterm=none	guifg=#93a1a1 gui=italic
+
+" let g:enable_bold_font = 1
+" let g:enable_italic_font = 1
+" let g:hybrid_transparent_background = 1
+" colorscheme hybrid_material
+
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'darker'
+colorscheme material
 
 " 不可視文字の表示
 set list
