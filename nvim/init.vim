@@ -24,6 +24,7 @@ Plug 'altercation/vim-colors-solarized'         " カラースキーム
 Plug 'sickill/vim-monokai'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'kaicataldo/material.vim'
+Plug 'luochen1990/rainbow'                      " 括弧の色つけ
 Plug 'itchyny/lightline.vim'                    " ステータスバー
 Plug 'nathanaelkane/vim-indent-guides'          " インデントの可視化
 Plug 'airblade/vim-gitgutter'                   " Gitの状態表示
@@ -162,6 +163,9 @@ autocmd ColorScheme * highlight Comment	ctermfg=246	cterm=none	guifg=#93a1a1 gui
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'darker'
 colorscheme material
+
+" 括弧
+let g:rainbow_active = 1
 
 " 不可視文字の表示
 set list
