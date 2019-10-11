@@ -188,32 +188,10 @@ let g:terminal_scrollback_buffer_size = 100000
 "------------------------------------------------------------------------------
 " キーマップ
 "------------------------------------------------------------------------------
-" helpを使いやすくする idea from http://haya14busa.com/reading-vim-help/
-nnoremap <Leader>t :<C-u>tab help<Space>
-nnoremap <Leader>v :<C-u>vertical belowright help<Space>
-
-" MoveToNewTab
-nnoremap <silent> tm :<C-u>call <SID>MoveToNewTab()<CR>
-function! s:MoveToNewTab()
-    tab split
-    tabprevious
-
-    if winnr('$') > 1
-        close
-    elseif bufnr('$') > 1
-        buffer #
-    endif
-
-    tabnext
-endfunction
-
 " キーを無効化
 nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
-" ; : 入れ替え
-"nnoremap ; :
-"nnoremap : ;
 " 行末までヤンク
 nnoremap Y y$
 " 数値の増減
