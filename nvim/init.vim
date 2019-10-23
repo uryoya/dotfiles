@@ -178,6 +178,7 @@ set noswapfile  " スワップフィアルを作らない
 set wildmenu    " ファイル名補完の設定
 set backspace=indent,eol,start  " バックスペースで色々消せるようにする
 set mouse=a
+set virtualedit+=block " 矩形選択で自由に移動する- https://vim-jp.org/vim-users-jp/2010/02/17/Hack-125.html
 
 autocmd BufRead,BufNewFile *.sc setfiletype scala
 autocmd FileType json syntax match Comment +\/\/.\+$+
