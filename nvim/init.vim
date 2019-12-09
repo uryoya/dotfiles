@@ -181,6 +181,7 @@ set mouse=a
 set virtualedit+=block " 矩形選択で自由に移動する- https://vim-jp.org/vim-users-jp/2010/02/17/Hack-125.html
 
 autocmd BufRead,BufNewFile *.sc setfiletype scala
+autocmd BufRead,BufNewFile *.sbt setfiletype scala
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " nvim terminal
