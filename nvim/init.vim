@@ -24,6 +24,7 @@ Plug 'altercation/vim-colors-solarized'         " カラースキーム
 Plug 'sickill/vim-monokai'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'kaicataldo/material.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'luochen1990/rainbow'                      " 括弧の色つけ
 Plug 'itchyny/lightline.vim'                    " ステータスバー
 Plug 'nathanaelkane/vim-indent-guides'          " インデントの可視化
@@ -79,7 +80,8 @@ let mapleader = "\<Space>"
 
 " Lightline settings
 set laststatus=2
-let g:lightline = {'colorscheme':'material'}
+let g:lightline = {'colorscheme':'palenight'}
+" let g:lightline = {'colorscheme':'material'}
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
@@ -143,10 +145,12 @@ autocmd ColorScheme * highlight NonText ctermbg=none guibg=none
 " コードコメントのハイライトを明るく
 autocmd ColorScheme * highlight Comment	ctermfg=246 cterm=italic guifg=#93a1a1 gui=italic
 
-let g:enable_bold_font = 1
-let g:enable_italic_font = 1
-let g:hybrid_transparent_background = 1
-colorscheme hybrid_material
+colorscheme palenight
+
+" let g:enable_bold_font = 1
+" let g:enable_italic_font = 1
+" let g:hybrid_transparent_background = 1
+" colorscheme hybrid_material
 
 " let g:material_terminal_italics = 1
 " let g:material_theme_style = 'darker'
