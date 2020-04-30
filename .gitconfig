@@ -16,3 +16,4 @@
     br = "branch"
     bra = "branch -a"
     co = "!git checkout $(git branch -a --format '%(refname:short)' | fzf)"
+    addf = "!fish -c __git_addf"
