@@ -56,7 +56,12 @@ function __creel_delete
 end
 
 function __creel_update
-    echo "`update` is not implemented"
+    for managed_dir in $__creel_managed_dirs
+        for fish_function in (ls $managed_dir/*.fish)
+            ln -sf $fish_function $HOME/.config/fish/functions/ \
+                && echo "updated function:" $fish_function
+        end
+    end
 end
 
 function __creel_list
