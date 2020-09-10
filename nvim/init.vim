@@ -36,6 +36,9 @@ Plug 'Shougo/denite.nvim'                       " 闇のファイラ
 Plug 'tyru/caw.vim'                             " コメントアウト
 Plug 'cohama/lexima.vim'                        " 括弧の自動挿入
 Plug 'editorconfig/editorconfig-vim'            " EditorConfig
+Plug 'previm/previm'
+Plug 'tyru/open-browser.vim'
+Plug 'Rykka/riv.vim'
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree', {'do': ':NERDTreeToggle'}
