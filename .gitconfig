@@ -7,7 +7,6 @@
     ui = true
 [ghq]
     root = ~/Repositories/
-    root = ~/go/src/
 [alias]
     # https://mattn.kaoriya.net/software/git/20140708105946.htm
     # TODO: このままだとCloseしてるブランチも持ってくるっぽいのでどうにかしたい
