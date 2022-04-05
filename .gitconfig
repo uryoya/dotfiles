@@ -1,5 +1,7 @@
 [core]
     editor = vim
+    pager = delta
+	quotepath = false
 [user]
     email = urano.works.mail@gmail.com
     name = URANO Ryoya
@@ -17,3 +19,18 @@
     co = "!git checkout $(git branch -a --format '%(refname:short)' | fzf)"
     addf = "!fish -c __git_addf"
     tmpcommit = "commit -am 'tmp commit'"
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+
+[interactive]
+    diffFilter = delta --color-only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
