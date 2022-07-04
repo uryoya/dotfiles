@@ -6,6 +6,7 @@ ln -sf $HOME/dotfiles/.vim $HOME/.vim
 ln -sf $HOME/dotfiles/nvim $HOME/.config/nvim
 ln -sf $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 ln -sf $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+ln -sf $HOME/dotfiles/fish/creel.fish $HOME/.config/fish/functions/creel.fish
 
 # Neovim用に使うプラグインマネージャ
 curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
