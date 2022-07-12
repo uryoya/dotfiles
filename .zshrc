@@ -33,6 +33,13 @@ setopt extended_glob        # 高機能なワイルドカード展開を使用�
 # キーバインド
 bindkey -e
 bindkey '^R' history-incremental-pattern-search-backward # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
+function __fzf_repos() {
+    ghq list --full-path | fzf --reverse --preview='[ -e {}/README.md ] && bat {}/README.md || echo "README.md not found"' | read repository
+    [ -n "$repository" ] && cd $repository
+    zle reset-prompt
+}
+zle -N __fzf_repos
+bindkey '^G' __fzf_repos
 
 ########################################
 # エイリアス
@@ -44,8 +51,6 @@ alias gs='git status --short --branch'
 alias gd='git diff'
 alias rsyncg='rsync -azv --delete --filter=":- .gitignore"' # rsync git project
 alias sudo='sudo ' # sudo の後のコマンドでエイリアスを有効にする
-alias -g L='| less'
-alias -g G='| grep'
 
 ########################################
 # antigen https://github.com/zsh-users/antigen
@@ -59,7 +64,7 @@ source $antigenfile
 
 antigen bundle zsh-users/zsh-completions         # 補完定義 https://github.com/zsh-users/zsh-autosuggestions
 #export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-ZSH_AUTOSUGGEST_STRATEGY=('completion' 'history')
+ZSH_AUTOSUGGEST_STRATEGY=('history' 'completion')
 antigen bundle zsh-users/zsh-autosuggestions     # fish風自動補完 https://github.com/zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting # シンタックスハイライト(プラグインのロード順は最後にする必要あり。詳細はリポジトリのREADME.mdを見ること) https://github.com/zsh-users/zsh-syntax-highlighting
 
@@ -68,4 +73,3 @@ antigen apply
 ########################################
 # プロンプト
 eval "$(starship init zsh)"
-
