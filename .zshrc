@@ -40,6 +40,13 @@ function __fzf_repos() {
 }
 zle -N __fzf_repos
 bindkey '^G' __fzf_repos
+function __fzf_git_switch() {
+    git branch | fzf --reverse | read branch
+    [[ -n "$branch" ]] && git switch $branch
+    zle reset-prompt
+}
+zle -N __fzf_git_switch
+bindkey '^B' __fzf_git_switch
 
 ########################################
 # エイリアス
@@ -74,3 +81,9 @@ antigen apply
 # プロンプト
 eval "$(starship init zsh)"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/r_urano/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/r_urano/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/r_urano/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/r_urano/google-cloud-sdk/completion.zsh.inc'; fi
