@@ -35,7 +35,13 @@ setopt extended_glob        # 高機能なワイルドカード展開を使用�
 ########################################
 # キーバインド
 bindkey -e
-bindkey '^R' history-incremental-pattern-search-backward # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
+function __fzf_history() {
+    fc -ln 1 | fzf --reverse | read cmd
+    [ -n "$cmd" ] && BUFFER=$cmd && CURSOR=${#BUFFER}
+    zle redisplay
+}
+zle -N __fzf_history
+bindkey '^R' __fzf_history
 function __fzf_repos() {
     ghq list --full-path \
     | fzf --reverse --preview='[ -e {}/README.md ] && bat {}/README.md || echo "README.md not found"' \
