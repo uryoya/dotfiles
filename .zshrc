@@ -2,11 +2,10 @@
 # License : MIT
 # http://mollifier.mit-license.org/
 ########################################
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # 環境変数
+source "$HOME/.cargo/env"
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$VOLTA_HOME/bin:$HOME/.local/bin:$PATH:$(go env GOPATH)/bin:$HOME/.local/flutter/bin"
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
 [[ -e "$HOME/.zshrc_dev" ]] && source "$HOME/.zshrc_dev" # 開発用設定の読み込み
 
@@ -92,5 +91,3 @@ antigen apply
 # プロンプト
 eval "$(starship init zsh)"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
