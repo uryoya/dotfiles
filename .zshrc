@@ -5,7 +5,7 @@
 # 環境変数
 source "$HOME/.cargo/env"
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$HOME/.local/bin:$PATH:$(go env GOPATH)/bin:$HOME/.local/flutter/bin"
+export PATH="$PATH:/opt/homebrew/opt/openjdk/bin:$VOLTA_HOME/bin:$HOME/.local/bin:$(go env GOPATH)/bin:$HOME/.local/flutter/bin"
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
 [[ -e "$HOME/.zshrc_dev" ]] && source "$HOME/.zshrc_dev" # 開発用設定の読み込み
 
@@ -91,3 +91,9 @@ antigen apply
 # プロンプト
 eval "$(starship init zsh)"
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/r_urano/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/r_urano/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/r_urano/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/r_urano/google-cloud-sdk/completion.zsh.inc'; fi
