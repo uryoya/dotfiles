@@ -5,9 +5,11 @@
 # 環境変数
 source "$HOME/.cargo/env"
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$PATH:/opt/homebrew/opt/openjdk/bin:$VOLTA_HOME/bin:$HOME/.local/bin:$(go env GOPATH)/bin:$HOME/.local/flutter/bin"
+export PATH="$PATH:/opt/homebrew/opt/openjdk/bin:$VOLTA_HOME/bin:$HOME/.local/bin:$(go env GOPATH)/bin:$HOME/.pub-cache/bin"
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
 [[ -e "$HOME/.zshrc_dev" ]] && source "$HOME/.zshrc_dev" # 開発用設定の読み込み
+eval "$(rbenv init - zsh)"
+
 
 autoload -Uz colors && colors # 色を使用出来るようにする
 
