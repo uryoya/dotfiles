@@ -36,6 +36,7 @@ setopt extended_glob        # 高機能なワイルドカード展開を使用�
 ########################################
 # キーバインド
 bindkey -e
+
 function __fzf_history() {
     fc -ln 1 | fzf --reverse | read cmd
     [ -n "$cmd" ] && BUFFER=$cmd && CURSOR=${#BUFFER}
@@ -43,6 +44,7 @@ function __fzf_history() {
 }
 zle -N __fzf_history
 bindkey '^R' __fzf_history
+
 function __fzf_repos() {
     ghq list --full-path \
     | fzf --reverse --preview='[ -e {}/README.md ] && bat {}/README.md || echo "README.md not found"' \
@@ -52,6 +54,7 @@ function __fzf_repos() {
 }
 zle -N __fzf_repos
 bindkey '^G' __fzf_repos
+
 function __fzf_git_switch() {
     git branch | fzf --reverse | read branch
     [[ -n "$branch" ]] && git switch $branch
@@ -59,6 +62,14 @@ function __fzf_git_switch() {
 }
 zle -N __fzf_git_switch
 bindkey '^B' __fzf_git_switch
+
+function __fzf_cd() {
+    local dir
+    dir=$(ls -1 | grep '\/$' | fzf --reverse) && cd $dir
+    zle reset-prompt
+}
+bindkey '^F' __fzf_cd
+zle -N __fzf_cd
 
 ########################################
 # エイリアス
