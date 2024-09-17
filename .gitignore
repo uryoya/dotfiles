@@ -3,4 +3,5 @@
 nvim/dein/
 nvim/autoload/
 nvim/plugged/
+fish/fish_variables
 *~
