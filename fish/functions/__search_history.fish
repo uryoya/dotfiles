@@ -1,4 +1,4 @@
 function __search_history
-    history | fzf | read -l tmp
+    history | fzf --reverse | read -l tmp
     [ -n "$tmp" ] && commandline $tmp
 end
