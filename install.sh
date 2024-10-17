@@ -53,6 +53,12 @@ install_fish () {
        && ln -sf $PWD/fish $HOME/.config/fish
 }
 
+# install starship config
+install_starship () {
+    [ ! -e $HOME/.config/starship ] \
+       && ln -sf $PWD/starship/starship.toml $HOME/.config/starship.toml
+}
+
 # check and install configs
 read -n1 -p "install vim config?: " yn
 if [[ $yn = [yY] ]]; then
@@ -98,6 +104,14 @@ read -n1 -p "install fish config?: " yn
 if [[ $yn = [yY] ]]; then
     echo
     install_fish && echo "fish config installed!"
+else
+    echo
+fi
+
+read -n1 -p "install starship config?: " yn
+if [[ $yn = [yY] ]]; then
+    echo
+    install_starship && echo "starship config installed!"
 else
     echo
 fi
