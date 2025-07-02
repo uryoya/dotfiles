@@ -4,5 +4,5 @@ end
 
 # setup shell tools
 mise activate fish | source
-starship init fish | source
+#starship init fish | source
 
