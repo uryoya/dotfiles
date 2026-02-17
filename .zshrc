@@ -5,7 +5,7 @@
 # 環境変数
 source "$HOME/.cargo/env"
 export VOLTA_HOME="$HOME/.volta"
-export PATH="$PATH:/opt/homebrew/opt/openjdk/bin:$VOLTA_HOME/bin:$HOME/.local/bin:$(go env GOPATH)/bin:$HOME/.pub-cache/bin"
+export PATH="$PATH:/opt/homebrew/opt/openjdk/bin:$VOLTA_HOME/bin:$HOME/.local/bin:$(go env GOPATH)/bin:$HOME/.pub-cache/bin:$HOME/.duckdb/cli/latest"
 [[ $PATH =~ /usr/local/bin ]] || export PATH=/usr/local/bin:$PATH
 [[ -e "$HOME/.env" ]] && source "$HOME/.env" # 開発用設定の読み込み
 eval "$(rbenv init - zsh)"
@@ -110,3 +110,10 @@ if [ -f '/Users/r_urano/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/r_urano
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/r_urano/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/r_urano/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH=/Users/r_urano/.tiup/bin:$PATH
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+export PATH=/Users/r_urano/.ticloud/bin:$PATH
